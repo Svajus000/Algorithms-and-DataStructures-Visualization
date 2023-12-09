@@ -3,7 +3,6 @@ import "./AlgorithmStartButton.css";
 
 let algorithm = { state: false, speed: 15, backtrackingSpeed: 15 };
 let targetNode;
-let sec = 15;
 
 function bfs(startingNode, grid) {
   let neighbours = [startingNode];
@@ -23,7 +22,7 @@ function bfs(startingNode, grid) {
       neighbours.push(nodesList[node]);
     }
   }
-  setTimeout(backtrack, algorithm.backtrackingSpeed, targetNode);
+  backtrack(targetNode);
   algorithm.state = true;
 }
 
@@ -39,16 +38,18 @@ function animateBacktracking(node) {
 
 function backtrack(targetNode) {
   let currentNode = targetNode;
+
   while (currentNode.previousNode != null) {
     setTimeout(animateBacktracking, algorithm.speed, currentNode);
     currentNode = currentNode.previousNode;
-    algorithm.speed += 20;
+    algorithm.speed += 10;
+    console.log(algorithm.speed);
   }
   setTimeout(animateBacktracking, algorithm.speed, currentNode);
 }
 
 function getNeigbours(grid, node) {
-  let queue = [];
+  let neighbours = [];
   let neighbourLeft;
   let neighbourBottom;
   let neighbourTop;
@@ -58,7 +59,7 @@ function getNeigbours(grid, node) {
     grid[node.row][node.column + 1].visited === false
   ) {
     neighbourRight = grid[node.row][node.column + 1];
-    queue.push(neighbourRight);
+    neighbours.push(neighbourRight);
     neighbourRight.distance = node.distance + 1;
   }
   if (
@@ -66,7 +67,7 @@ function getNeigbours(grid, node) {
     grid[node.row + 1][node.column].visited === false
   ) {
     neighbourBottom = grid[node.row + 1][node.column];
-    queue.push(neighbourBottom);
+    neighbours.push(neighbourBottom);
     neighbourBottom.distance = node.distance + 1;
   }
   if (
@@ -74,70 +75,69 @@ function getNeigbours(grid, node) {
     grid[node.row][node.column - 1].visited === false
   ) {
     neighbourLeft = grid[node.row][node.column - 1];
-    queue.push(neighbourLeft);
+    neighbours.push(neighbourLeft);
     neighbourLeft.distance = node.distance + 1;
   }
   if (node.row - 1 >= 0 && grid[node.row - 1][node.column].visited === false) {
     neighbourTop = grid[node.row - 1][node.column];
-    queue.push(neighbourTop);
+    neighbours.push(neighbourTop);
     neighbourTop.distance = node.distance + 1;
   }
-  return queue;
+  return neighbours;
 }
 
 function dfs(grid, node) {
   if (algorithm.state) {
-    return sec;
+    return;
   }
   if (node.isFinishing === true) {
     algorithm.state = true;
     targetNode = node;
+    backtrack(targetNode);
   }
-  sec += 10;
+  algorithm.speed += 10;
   node.visited = true;
-  setTimeout(animateVisitedNodes, sec, node);
-
+  setTimeout(animateVisitedNodes, algorithm.speed, node);
   if (
     node.row + 1 < grid.length &&
     grid[node.row + 1][node.column].visited === false
   ) {
-    dfs(grid, grid[node.row + 1][node.column]);
     grid[node.row + 1][node.column].previousNode = node;
+    dfs(grid, grid[node.row + 1][node.column]);
   }
   if (
     node.column + 1 < grid[0].length &&
     grid[node.row][node.column + 1].visited === false
   ) {
-    dfs(grid, grid[node.row][node.column + 1]);
     grid[node.row][node.column + 1].previousNode = node;
+    dfs(grid, grid[node.row][node.column + 1]);
   }
   if (node.row - 1 >= 0 && grid[node.row - 1][node.column].visited === false) {
-    dfs(grid, grid[node.row - 1][node.column]);
     grid[node.row - 1][node.column].previousNode = node;
+    dfs(grid, grid[node.row - 1][node.column]);
   }
   if (
     node.column - 1 >= 0 &&
     grid[node.row][node.column - 1].visited === false
   ) {
-    dfs(grid, grid[node.row][node.column - 1]);
     grid[node.row][node.column - 1].previousNode = node;
+    dfs(grid, grid[node.row][node.column - 1]);
   }
 }
 
 export default function AlgorithmStartButton() {
   function handleClick() {
-    let element = document.getElementById("algorithm").innerHTML;
+    let algorithmButton = document.getElementById("algorithm").innerHTML;
 
     if (!algorithm.state) {
-      if (element === "Breath-First-Search") {
+      if (algorithmButton === "Breath-First-Search") {
         bfs(startingNode, grid);
       }
-      if (element === "Depth-First-Search") {
+      if (algorithmButton === "Depth-First-Search") {
         dfs(grid, grid[startingNode.row + 1][startingNode.column]);
-        setTimeout(backtrack, sec, targetNode);
       } else {
         console.log("None");
-        console.log(element);
+        console.log(algorithmButton);
       }
     }
   }

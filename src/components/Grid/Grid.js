@@ -23,7 +23,7 @@ function createGrid(row, column) {
         node.visited = true;
         node.distance = 0;
       }
-      if (node.row === 25 && node.column === 30) {
+      if (node.row === 25 && node.column === 35) {
         node.isFinishing = true;
       }
       grid[i].push(node);
