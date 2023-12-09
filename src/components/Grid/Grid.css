@@ -1,0 +1,34 @@
+.grid {
+  width: 80%;
+  padding: 5rem;
+  display: grid;
+  grid-template-rows: repeat(40, 1fr);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: repeat(80, 1fr);
+}
+
+.node {
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.isStarting {
+  background-color: yellow;
+}
+
+.isFinishing {
+  background-color: green;
+}
+
+.visited {
+  background-color: rgb(13, 50, 77);
+  transition: background-color 1s;
+}
+
+.backtrack {
+  background-color: yellow;
+  transition: background-color 1s;
+}

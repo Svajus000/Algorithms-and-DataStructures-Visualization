@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Grid from "./components/Grid/Grid";
+import SidePanel from "./components/SidePanel/SidePanel";
+
+function Navigation() {
+  return <div className="nav"></div>;
+}
+
+function Playground() {
+  return <Grid />;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navigation />
+      <div className="heading">
+        <SidePanel />
+        <Playground />
+      </div>
     </div>
   );
 }

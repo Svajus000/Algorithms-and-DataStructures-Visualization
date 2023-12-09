@@ -1,0 +1,21 @@
+.clear {
+  position: absolute;
+  left: 25%;
+  bottom: 30%;
+  width: 10rem;
+  border: 1px solid gray;
+  color: white;
+  animation: anima 1s;
+}
+
+@keyframes anima {
+  0% {
+    bottom: 26%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 30%;
+    opacity: 100%;
+  }
+}

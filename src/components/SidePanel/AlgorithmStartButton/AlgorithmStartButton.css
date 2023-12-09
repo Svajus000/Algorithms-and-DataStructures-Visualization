@@ -1,0 +1,21 @@
+.startButton {
+  position: absolute;
+  border: 1px solid gray;
+  color: white;
+  width: 15rem;
+  bottom: 4%;
+  left: 16%;
+  animation: anim 1s;
+}
+
+@keyframes anim {
+  0% {
+    bottom: 0%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 4%;
+    opacity: 100%;
+  }
+}
