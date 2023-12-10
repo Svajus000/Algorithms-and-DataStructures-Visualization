@@ -143,7 +143,7 @@ export default function AlgorithmStartButton() {
   }
 
   return (
-    <button className="btn startButton" onClick={handleClick}>
+    <button className="sidepanel-button" onClick={handleClick}>
       Start Algorithm
     </button>
   );

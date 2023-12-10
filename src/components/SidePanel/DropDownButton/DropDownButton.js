@@ -8,28 +8,20 @@ export default function DropDownButton() {
     return chosenAlgorithm;
   }
   return (
-    <div className="dropdown">
-      <button
-        id="algorithm"
-        className="btn dropdown-toggle se"
-        type="button"
-        data-bs-toggle="dropdown"
-        aria-expanded="false"
-      >
-        - - Select Algorithm - -
-      </button>
-      <ul className="dropdown-menu">
+    <button className="sidepanel-button" id="algorithm" type="button">
+      - - Select Algorithm - -
+    </button>
+    /* <ul className="dropdown-menu">
         <li>
-          <button onClick={handleButtonClick} className="dropdown-item">
+          <button onClick={handleButtonClick} className="">
             Breath-First-Search
           </button>
         </li>
         <li>
-          <button onClick={handleButtonClick} className="dropdown-item">
+          <button onClick={handleButtonClick} className="">
             Depth-First-Search
           </button>
         </li>
-      </ul>
-    </div>
+      </ul> */
   );
 }

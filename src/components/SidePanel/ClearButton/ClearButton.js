@@ -1,6 +1,7 @@
 import "./ClearButton.css";
 import { grid } from "../../Grid/Grid";
 import { algorithm } from "../AlgorithmStartButton/AlgorithmStartButton";
+
 export default function ClearButton() {
   function handleClick() {
     for (let numOfRows = 0; numOfRows < grid.length; numOfRows++) {
@@ -26,7 +27,7 @@ export default function ClearButton() {
     algorithm.backtrackingSpeed = 15;
   }
   return (
-    <button onClick={handleClick} className="btn clear">
+    <button className="sidepanel-button" onClick={handleClick}>
       Clear Board
     </button>
   );
