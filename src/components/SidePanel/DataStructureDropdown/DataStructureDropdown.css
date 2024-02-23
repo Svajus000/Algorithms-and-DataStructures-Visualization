@@ -1,0 +1,23 @@
+.dropdown-algorithm {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.8s ease-out;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-algorithm.open {
+  max-height: 1000px;
+}
+
+.dropdown-algorithm button {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-algorithm button:hover {
+  background-color: #ddd;
+}

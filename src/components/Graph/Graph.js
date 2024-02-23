@@ -1,4 +1,4 @@
-import "./Grid.css";
+import "./Graph.css";
 
 export let startingNode;
 export const grid = createGrid(40, 80);
@@ -32,7 +32,7 @@ function createGrid(row, column) {
   return grid;
 }
 
-export default function Grid() {
+export default function Graph() {
   const gridNodes = grid.map((row) => (
     <div key={`row-${row[0].row}`} className="row">
       {row.map((node) => (

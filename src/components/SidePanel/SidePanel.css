@@ -4,13 +4,14 @@
   height: 100vh;
   background-color: rgb(13, 50, 77);
   box-shadow: 5px 0 10px 0 rgba(0, 0, 0, 0.2);
-  text-align: center;
+  transition: 0.4s;
 }
 
 .sidepanel-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: 0.4s;
 }
 
 .sidepanel-header {
@@ -20,11 +21,12 @@
 }
 
 .sidepanel-header-heading {
-  position: relative;
+  position: flex;
   height: 64px;
   padding-top: 16px;
   font-size: 20px;
   margin: 0;
+  text-align: center;
 }
 
 .sidepanel-menu {
@@ -40,6 +42,7 @@ button {
 }
 
 .sidepanel-button {
+  position: relative;
   display: flex;
   gap: 16px;
   align-items: center;
@@ -47,15 +50,66 @@ button {
   width: 100%;
   font-family: "Poppins";
   font-size: 16px;
-  text-transform: capitalize;
   line-height: 1;
   padding: 0 10px;
   border-radius: 8px;
   color: #f9f9f9;
-  opacity: 0.8;
+  transition: 0.4s;
 }
 
 .sidepanel-button:hover {
   opacity: 1;
   background-color: rgb(0 0 0 / 30%);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  color: #fff;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1.8s ease-out;
+  position: relative;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content.open {
+  max-height: 1000px;
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  display: block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+button {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 56px;
+  width: 100%;
+  font-family: "Poppins";
+  font-size: 16px;
+  line-height: 1;
+  padding: 0 10px;
+  border-radius: 8px;
+  color: #f9f9f9;
+  transition: 0.4s;
 }

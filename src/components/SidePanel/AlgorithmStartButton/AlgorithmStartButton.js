@@ -1,4 +1,4 @@
-import { startingNode, grid } from "../../Grid/Grid";
+import { startingNode, grid } from "../../Graph/Graph";
 import "./AlgorithmStartButton.css";
 
 let algorithm = { state: false, speed: 15, backtrackingSpeed: 15 };
@@ -127,7 +127,7 @@ function dfs(grid, node) {
 
 export default function AlgorithmStartButton() {
   function handleClick() {
-    let algorithmButton = document.getElementById("algorithm").innerHTML;
+    let algorithmButton = document.getElementById("Algorithms").innerHTML;
 
     if (!algorithm.state) {
       if (algorithmButton === "Breath-First-Search") {

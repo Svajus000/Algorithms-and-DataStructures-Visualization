@@ -1,5 +1,5 @@
 import "./ClearButton.css";
-import { grid } from "../../Grid/Grid";
+import { grid } from "../../Graph/Graph";
 import { algorithm } from "../AlgorithmStartButton/AlgorithmStartButton";
 
 export default function ClearButton() {
