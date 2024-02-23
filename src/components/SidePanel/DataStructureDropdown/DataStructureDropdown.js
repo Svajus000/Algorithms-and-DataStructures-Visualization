@@ -6,6 +6,7 @@ const dataStuctures = [
   "Array",
   "Queue",
   "Stack",
+  "HashMap",
   "LinkedList",
   "Trees",
   "Graph",

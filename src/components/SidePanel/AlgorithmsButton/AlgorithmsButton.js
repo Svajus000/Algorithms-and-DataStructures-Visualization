@@ -1,5 +1,6 @@
-import "./DropDownButton.css";
-import React, { useState } from "react";
+import "./AlgorithmsButton.css";
+import React, { useState, useContext } from "react";
+import { DsaContext } from "../../../App";
 
 const algorithms = {
   Array: [],
@@ -7,12 +8,12 @@ const algorithms = {
   Stack: [],
   LinkedList: [],
   Trees: [],
-  Graphs: ["Breath-First-Search", "Depth-First-Search"],
+  Graph: ["Breath-First-Search", "Depth-First-Search"],
 };
 
-export default function AlgorithmButton() {
+export default function AlgorithmsButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dataStructure, setDataStructure] = useState("");
+  const { dataStructure, setDataStructure } = useContext(DsaContext);
   const [algorithm, setAlgorithm] = useState("Algorithms");
   const toggleDropdown = (event) => {
     setIsOpen(!isOpen);

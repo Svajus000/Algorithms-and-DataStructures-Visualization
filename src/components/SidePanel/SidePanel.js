@@ -1,5 +1,5 @@
-import DropDownButton from "./DropDownButton/DropDownButton";
-import ClearButton from "./ClearButton/ClearButton";
+import AlgorithmsButton from "./AlgorithmsButton/AlgorithmsButton";
+import ResetButton from "./ResetButton/ResetButton";
 import AlgorithmStartButton from "./AlgorithmStartButton/AlgorithmStartButton";
 import "./SidePanel.css";
 import DataStructureDropdown from "./DataStructureDropdown/DataStructureDropdown";
@@ -15,8 +15,8 @@ export default function SidePanel() {
         </div>
 
         <DataStructureDropdown />
-        <ClearButton />
-        <DropDownButton />
+        <ResetButton />
+        <AlgorithmsButton />
         <AlgorithmStartButton />
       </div>
     </div>
