@@ -6,9 +6,16 @@ import { useState, createContext } from "react";
 const DsaContext = createContext(null);
 
 function App() {
+  const algorithmParameters = {
+    speed: 15,
+    backtrackingSpeed: 15,
+    isRunning: false,
+  };
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (
-    <DsaContext.Provider value={{ dataStructure, setDataStructure }}>
+    <DsaContext.Provider
+      value={{ dataStructure, setDataStructure, algorithmParameters }}
+    >
       <div className="heading">
         <SidePanel />
         <Playground />

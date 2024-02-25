@@ -5,7 +5,7 @@ import { DsaContext } from "../../../App";
 const algorithms = {
   Array: [],
   Queue: [],
-  Stack: [],
+  Stack: ["Push", "Pop"],
   LinkedList: [],
   Trees: [],
   Graph: ["Breath-First-Search", "Depth-First-Search"],
@@ -19,7 +19,6 @@ export default function AlgorithmsButton() {
     setIsOpen(!isOpen);
     setAlgorithm(event.target.innerHTML);
     setDataStructure(document.getElementById("dataStructures")?.innerHTML);
-    console.log(dataStructure);
   };
   return (
     <div className="dropdown">

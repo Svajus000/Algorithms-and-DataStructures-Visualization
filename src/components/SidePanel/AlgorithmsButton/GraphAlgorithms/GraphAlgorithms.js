@@ -1,13 +1,12 @@
-let algorithm = { state: false, speed: 15, backtrackingSpeed: 15 };
 let targetNode;
 
-function bfs(startingNode, grid) {
+const bfs = (startingNode, grid, algorithmParameters) => {
   let neighbours = [startingNode];
   let nodesList = [];
   while (neighbours.length > 0) {
     let neighbour = neighbours.shift();
-    setTimeout(animateVisitedNodes, algorithm.speed, neighbour);
-    algorithm.speed += 15;
+    setTimeout(animateVisitedNodes, algorithmParameters.speed, neighbour);
+    algorithmParameters.speed += 15;
     if (neighbour.isFinishing === true) {
       targetNode = neighbour;
       break;
@@ -20,8 +19,8 @@ function bfs(startingNode, grid) {
     }
   }
   backtrack(targetNode);
-  algorithm.state = true;
-}
+  algorithmParameters.state = true;
+};
 
 function animateVisitedNodes(node) {
   let nodeElement = document.getElementById(`node-${node.row}-${node.column}`);
@@ -33,16 +32,16 @@ function animateBacktracking(node) {
   nodeElement.classList.add("backtrack");
 }
 
-function backtrack(targetNode) {
+function backtrack(targetNode, algorithmParameters) {
   let currentNode = targetNode;
 
   while (currentNode.previousNode != null) {
-    setTimeout(animateBacktracking, algorithm.speed, currentNode);
+    setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
     currentNode = currentNode.previousNode;
-    algorithm.speed += 10;
-    console.log(algorithm.speed);
+    algorithmParameters.speed += 10;
+    console.log(algorithmParameters.speed);
   }
-  setTimeout(animateBacktracking, algorithm.speed, currentNode);
+  setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
 }
 
 function getNeigbours(grid, node) {
@@ -83,43 +82,43 @@ function getNeigbours(grid, node) {
   return neighbours;
 }
 
-function dfs(grid, node) {
-  if (algorithm.state) {
+const dfs = (grid, node, algorithmParameters) => {
+  if (algorithmParameters.state) {
     return;
   }
   if (node.isFinishing === true) {
-    algorithm.state = true;
+    algorithmParameters.state = true;
     targetNode = node;
     backtrack(targetNode);
   }
-  algorithm.speed += 10;
+  algorithmParameters.speed += 10;
   node.visited = true;
-  setTimeout(animateVisitedNodes, algorithm.speed, node);
+  setTimeout(animateVisitedNodes, algorithmParameters.speed, node);
   if (
     node.row + 1 < grid.length &&
     grid[node.row + 1][node.column].visited === false
   ) {
     grid[node.row + 1][node.column].previousNode = node;
-    dfs(grid, grid[node.row + 1][node.column]);
+    dfs(grid, grid[node.row + 1][node.column], algorithmParameters);
   }
   if (
     node.column + 1 < grid[0].length &&
     grid[node.row][node.column + 1].visited === false
   ) {
     grid[node.row][node.column + 1].previousNode = node;
-    dfs(grid, grid[node.row][node.column + 1]);
+    dfs(grid, grid[node.row][node.column + 1], algorithmParameters);
   }
   if (node.row - 1 >= 0 && grid[node.row - 1][node.column].visited === false) {
     grid[node.row - 1][node.column].previousNode = node;
-    dfs(grid, grid[node.row - 1][node.column]);
+    dfs(grid, grid[node.row - 1][node.column], algorithmParameters);
   }
   if (
     node.column - 1 >= 0 &&
     grid[node.row][node.column - 1].visited === false
   ) {
     grid[node.row][node.column - 1].previousNode = node;
-    dfs(grid, grid[node.row][node.column - 1]);
+    dfs(grid, grid[node.row][node.column - 1], algorithmParameters);
   }
-}
+};
 
-export { dfs, bfs, algorithm };
+export { dfs, bfs };

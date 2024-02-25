@@ -1,4 +1,5 @@
 import Graph from "./Graph/Graph";
+import FStack from "./Stack/Stack";
 import { useContext } from "react";
 import { DsaContext } from "../../App";
 
@@ -11,7 +12,7 @@ function Playground() {
     // return <Graph />;
   }
   if (dataStructure === "Stack") {
-    // return <Graph />;
+    return <FStack />;
   }
   if (dataStructure === "HashMap") {
     // return <Graph />;

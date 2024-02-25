@@ -1,0 +1,50 @@
+.header {
+  height: 100%;
+  width: 82%;
+}
+
+.stack {
+  position: relative;
+  height: 30rem;
+  width: 18rem;
+  border: 10px solid black;
+  border-top: none;
+  top: 20rem;
+  left: 40rem;
+}
+
+.pile {
+  position: absolute;
+  width: 16rem;
+  height: 3rem;
+  margin: 1rem;
+  transition-duration: 2s;
+}
+
+.pile:nth-child(1) {
+  top: 38.1rem;
+  left: 40rem;
+}
+.pile:nth-child(2) {
+  top: 41.3rem;
+  left: 40rem;
+}
+.pile:nth-child(3) {
+  top: 44.5rem;
+  left: 40rem;
+}
+
+.pile:nth-child(4) {
+  top: 47.7rem;
+  left: 40rem;
+}
+
+.pile:nth-child(5) {
+  top: 50.9rem;
+  left: 40rem;
+}
+
+.listItems {
+  display: flex;
+  flex-direction: column;
+}

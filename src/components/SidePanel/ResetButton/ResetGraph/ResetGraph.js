@@ -1,5 +1,4 @@
 import { grid } from "../../../Playground/Graph/Graph";
-import { algorithm } from "../../AlgorithmStartButton/AlgorithmStartButton";
 
 function resetGraph() {
   for (let numOfRows = 0; numOfRows < grid.length; numOfRows++) {
@@ -20,9 +19,6 @@ function resetGraph() {
       }
     }
   }
-  algorithm.state = false;
-  algorithm.speed = 100;
-  algorithm.backtrackingSpeed = 15;
 }
 
 export default resetGraph;
