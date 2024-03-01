@@ -1,5 +1,7 @@
 import Graph from "./Graph/Graph";
+import Queue from "./Queue/Queue";
 import FStack from "./Stack/Stack";
+import HashMapA from "./HashMap/HashMap";
 import { useContext } from "react";
 import { DsaContext } from "../../App";
 
@@ -9,13 +11,13 @@ function Playground() {
     // return <Graph />;
   }
   if (dataStructure === "Queue") {
-    // return <Graph />;
+    return <Queue />;
   }
   if (dataStructure === "Stack") {
     return <FStack />;
   }
   if (dataStructure === "HashMap") {
-    // return <Graph />;
+    return <HashMapA />;
   }
   if (dataStructure === "LinkedList") {
     // return <Graph />;

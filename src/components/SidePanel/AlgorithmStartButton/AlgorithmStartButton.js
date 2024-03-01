@@ -18,6 +18,16 @@ function AlgorithmStartButton() {
     if (dataStructure === "Stack") {
       if (!algorithmParameters.isRunning) {
         if (algorithmButton === "Push") {
+          // pushStack(stack, algorithmParameters);
+        }
+        if (algorithmButton === "Pop") {
+          // popStack(stack, algorithmParameters);
+        }
+      }
+    }
+    if (dataStructure === "Stack") {
+      if (!algorithmParameters.isRunning) {
+        if (algorithmButton === "Push") {
           pushStack(stack, algorithmParameters);
         }
         if (algorithmButton === "Pop") {
@@ -28,10 +38,14 @@ function AlgorithmStartButton() {
     if (dataStructure === "Graph") {
       if (!algorithmParameters.isRunning) {
         if (algorithmButton === "Breath-First-Search") {
-          bfs(startingNode, grid);
+          bfs(startingNode, grid, algorithmParameters);
         }
         if (algorithmButton === "Depth-First-Search") {
-          dfs(grid, grid[startingNode.row + 1][startingNode.column]);
+          dfs(
+            grid,
+            grid[startingNode.row + 1][startingNode.column],
+            algorithmParameters
+          );
         } else {
           console.log("None");
           console.log(algorithmButton);

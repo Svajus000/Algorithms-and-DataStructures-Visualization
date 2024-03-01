@@ -1,6 +1,7 @@
 let targetNode;
 
 const bfs = (startingNode, grid, algorithmParameters) => {
+  algorithmParameters.isRunning = true;
   let neighbours = [startingNode];
   let nodesList = [];
   while (neighbours.length > 0) {
@@ -9,6 +10,9 @@ const bfs = (startingNode, grid, algorithmParameters) => {
     algorithmParameters.speed += 15;
     if (neighbour.isFinishing === true) {
       targetNode = neighbour;
+      setTimeout(() => {
+        algorithmParameters.isRunning = false;
+      }, algorithmParameters.speed);
       break;
     }
     nodesList = getNeigbours(grid, neighbour);
@@ -18,7 +22,7 @@ const bfs = (startingNode, grid, algorithmParameters) => {
       neighbours.push(nodesList[node]);
     }
   }
-  backtrack(targetNode);
+  backtrack(targetNode, algorithmParameters);
   algorithmParameters.state = true;
 };
 
@@ -39,7 +43,6 @@ function backtrack(targetNode, algorithmParameters) {
     setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
     currentNode = currentNode.previousNode;
     algorithmParameters.speed += 10;
-    console.log(algorithmParameters.speed);
   }
   setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
 }
@@ -89,8 +92,12 @@ const dfs = (grid, node, algorithmParameters) => {
   if (node.isFinishing === true) {
     algorithmParameters.state = true;
     targetNode = node;
-    backtrack(targetNode);
+    backtrack(targetNode, algorithmParameters);
+    setTimeout(() => {
+      algorithmParameters.isRunning = false;
+    }, algorithmParameters.speed);
   }
+  algorithmParameters.isRunning = true;
   algorithmParameters.speed += 10;
   node.visited = true;
   setTimeout(animateVisitedNodes, algorithmParameters.speed, node);

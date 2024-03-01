@@ -4,11 +4,11 @@ import { useContext } from "react";
 import resetGraph from "./ResetGraph/ResetGraph";
 
 function ResetButton() {
-  const { dataStructure } = useContext(DsaContext);
+  const { dataStructure, algorithmParameters } = useContext(DsaContext);
 
   function handleClick() {
     if (dataStructure === "Graph") {
-      resetGraph();
+      resetGraph(algorithmParameters);
     }
   }
   return (

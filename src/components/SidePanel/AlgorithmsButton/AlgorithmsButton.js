@@ -4,7 +4,7 @@ import { DsaContext } from "../../../App";
 
 const algorithms = {
   Array: [],
-  Queue: [],
+  Queue: ["Enqueue", "Dequeue"],
   Stack: ["Push", "Pop"],
   LinkedList: [],
   Trees: [],

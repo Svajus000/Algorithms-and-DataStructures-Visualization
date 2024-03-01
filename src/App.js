@@ -10,6 +10,7 @@ function App() {
     speed: 15,
     backtrackingSpeed: 15,
     isRunning: false,
+    state: false,
   };
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (
