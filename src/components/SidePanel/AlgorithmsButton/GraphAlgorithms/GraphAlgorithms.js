@@ -1,29 +1,31 @@
 let targetNode;
 
 const bfs = (startingNode, grid, algorithmParameters) => {
-  algorithmParameters.isRunning = true;
-  let neighbours = [startingNode];
-  let nodesList = [];
-  while (neighbours.length > 0) {
-    let neighbour = neighbours.shift();
-    setTimeout(animateVisitedNodes, algorithmParameters.speed, neighbour);
-    algorithmParameters.speed += 15;
-    if (neighbour.isFinishing === true) {
-      targetNode = neighbour;
-      setTimeout(() => {
-        algorithmParameters.isRunning = false;
-      }, algorithmParameters.speed);
-      break;
+  if (!algorithmParameters.isRunning) {
+    algorithmParameters.isRunning = true;
+    let neighbours = [startingNode];
+    let nodesList = [];
+    while (neighbours.length > 0) {
+      let neighbour = neighbours.shift();
+      setTimeout(animateVisitedNodes, algorithmParameters.speed, neighbour);
+      algorithmParameters.speed += 15;
+      if (neighbour.isFinishing === true) {
+        targetNode = neighbour;
+        setTimeout(() => {
+          algorithmParameters.isRunning = false;
+        }, algorithmParameters.speed);
+        break;
+      }
+      nodesList = getNeigbours(grid, neighbour);
+      for (const node in nodesList) {
+        nodesList[node].previousNode = neighbour;
+        nodesList[node].visited = true;
+        neighbours.push(nodesList[node]);
+      }
     }
-    nodesList = getNeigbours(grid, neighbour);
-    for (const node in nodesList) {
-      nodesList[node].previousNode = neighbour;
-      nodesList[node].visited = true;
-      neighbours.push(nodesList[node]);
-    }
+    backtrack(targetNode, algorithmParameters);
+    algorithmParameters.state = true;
   }
-  backtrack(targetNode, algorithmParameters);
-  algorithmParameters.state = true;
 };
 
 function animateVisitedNodes(node) {

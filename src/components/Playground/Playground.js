@@ -7,8 +7,9 @@ import { useContext } from "react";
 import { DsaContext } from "../../App";
 
 function Playground() {
-  const { dataStructure } = useContext(DsaContext);
+  const { dataStructure, algorithmParameters } = useContext(DsaContext);
   let dataStructureComponent = null;
+  console.log(algorithmParameters.isRunning);
   if (dataStructure === "Array") {
     // return <Graph />;
   }
@@ -30,6 +31,7 @@ function Playground() {
   if (dataStructure === "Graph") {
     dataStructureComponent = <Graph />;
   }
+
   return <div className="playground">{dataStructureComponent}</div>;
 }
 

@@ -4,6 +4,7 @@ import { dfs, bfs } from "../AlgorithmsButton/GraphAlgorithms/GraphAlgorithms";
 import { useContext } from "react";
 import { DsaContext } from "../../../App";
 import { stack } from "../../Playground/Stack/Stack";
+import resetGraph from "../ResetButton/ResetGraph/ResetGraph";
 import {
   popStack,
   pushStack,
@@ -14,9 +15,9 @@ function AlgorithmStartButton() {
 
   function handleClick() {
     let algorithmButton = document.getElementById("Algorithms").innerHTML;
-    console.log(algorithmParameters);
-    if (dataStructure === "Stack") {
-      if (!algorithmParameters.isRunning) {
+
+    if (!algorithmParameters.isRunning) {
+      if (dataStructure === "Stack") {
         if (algorithmButton === "Push") {
           // pushStack(stack, algorithmParameters);
         }
@@ -24,9 +25,8 @@ function AlgorithmStartButton() {
           // popStack(stack, algorithmParameters);
         }
       }
-    }
-    if (dataStructure === "Stack") {
-      if (!algorithmParameters.isRunning) {
+
+      if (dataStructure === "Stack") {
         if (algorithmButton === "Push") {
           pushStack(stack, algorithmParameters);
         }
@@ -34,9 +34,8 @@ function AlgorithmStartButton() {
           popStack(stack, algorithmParameters);
         }
       }
-    }
-    if (dataStructure === "Graph") {
-      if (!algorithmParameters.isRunning) {
+      if (dataStructure === "Graph") {
+        resetGraph(algorithmParameters);
         if (algorithmButton === "Breath-First-Search") {
           bfs(startingNode, grid, algorithmParameters);
         }

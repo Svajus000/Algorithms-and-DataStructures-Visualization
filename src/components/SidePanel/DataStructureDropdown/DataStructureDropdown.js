@@ -13,12 +13,14 @@ const dataStuctures = [
 ];
 
 export default function DataStructureDropdown() {
-  const { dataStructure, setDataStructure } = useContext(DsaContext);
+  const { dataStructure, setDataStructure, algorithmParameters } =
+    useContext(DsaContext);
   const [isOpen, setIsOpen] = useState(false);
-
   const toggleDropdown = (event) => {
-    setIsOpen(!isOpen);
-    setDataStructure(event.target.innerHTML);
+    if (!algorithmParameters.isRunning) {
+      setIsOpen(!isOpen);
+      setDataStructure(event.target.innerHTML);
+    }
   };
   return (
     <div className="dropdown">

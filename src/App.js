@@ -16,7 +16,11 @@ function App() {
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (
     <DsaContext.Provider
-      value={{ dataStructure, setDataStructure, algorithmParameters }}
+      value={{
+        dataStructure,
+        setDataStructure,
+        algorithmParameters,
+      }}
     >
       <div className="heading">
         <SidePanel />
