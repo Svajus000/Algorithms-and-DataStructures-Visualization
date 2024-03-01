@@ -7,7 +7,7 @@
 
 .row {
   display: grid;
-  grid-template-columns: repeat(80, 1fr);
+  grid-template-columns: repeat(55, 1fr);
 }
 
 .node {

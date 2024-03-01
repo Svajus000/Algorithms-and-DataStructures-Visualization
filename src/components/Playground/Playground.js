@@ -1,3 +1,4 @@
+import "./Playground.css";
 import Graph from "./Graph/Graph";
 import Queue from "./Queue/Queue";
 import FStack from "./Stack/Stack";
@@ -7,17 +8,18 @@ import { DsaContext } from "../../App";
 
 function Playground() {
   const { dataStructure } = useContext(DsaContext);
+  let dataStructureComponent = null;
   if (dataStructure === "Array") {
     // return <Graph />;
   }
   if (dataStructure === "Queue") {
-    return <Queue />;
+    dataStructureComponent = <Queue />;
   }
   if (dataStructure === "Stack") {
-    return <FStack />;
+    dataStructureComponent = <FStack />;
   }
   if (dataStructure === "HashMap") {
-    return <HashMapA />;
+    dataStructureComponent = <HashMapA />;
   }
   if (dataStructure === "LinkedList") {
     // return <Graph />;
@@ -26,10 +28,9 @@ function Playground() {
     // return <Graph />;
   }
   if (dataStructure === "Graph") {
-    return <Graph />;
-  } else {
-    return null;
+    dataStructureComponent = <Graph />;
   }
+  return <div className="playground">{dataStructureComponent}</div>;
 }
 
 export default Playground;

@@ -1,6 +1,7 @@
 import "./App.css";
 import Playground from "./components/Playground/Playground";
 import SidePanel from "./components/SidePanel/SidePanel";
+import Instructions from "./components/Instructions/Instructions";
 import { useState, createContext } from "react";
 
 const DsaContext = createContext(null);
@@ -20,6 +21,7 @@ function App() {
       <div className="heading">
         <SidePanel />
         <Playground />
+        <Instructions />
       </div>
     </DsaContext.Provider>
   );

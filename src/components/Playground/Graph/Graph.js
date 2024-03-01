@@ -1,7 +1,7 @@
 import "./Graph.css";
 
 export let startingNode;
-export const grid = createGrid(40, 80);
+export const grid = createGrid(40, 55);
 
 function createGrid(row, column) {
   const grid = [];
