@@ -13,12 +13,15 @@ const algorithms = {
 
 export default function AlgorithmsButton() {
   const [isOpen, setIsOpen] = useState(false);
-  const { dataStructure, setDataStructure } = useContext(DsaContext);
+  const { dataStructure, setDataStructure, algorithmParameters } =
+    useContext(DsaContext);
   const [algorithm, setAlgorithm] = useState("Algorithms");
   const toggleDropdown = (event) => {
-    setIsOpen(!isOpen);
-    setAlgorithm(event.target.innerHTML);
-    setDataStructure(document.getElementById("dataStructures")?.innerHTML);
+    if (!algorithmParameters.isRunning) {
+      setIsOpen(!isOpen);
+      setAlgorithm(event.target.innerHTML);
+      setDataStructure(document.getElementById("dataStructures")?.innerHTML);
+    }
   };
   return (
     <div className="dropdown">

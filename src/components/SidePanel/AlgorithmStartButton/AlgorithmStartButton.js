@@ -9,20 +9,34 @@ import {
   popStack,
   pushStack,
 } from "../AlgorithmsButton/StackAlgorithms/StackAlgorithms";
+import { dequeue } from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
+import { enqueue } from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
+import { queue } from "../../Playground/Queue/Queue";
 
 function AlgorithmStartButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
-
+  algorithmParameters.queue.lastElement = queue.items.length;
   function handleClick() {
     let algorithmButton = document.getElementById("Algorithms").innerHTML;
+    let algorithmDropdownButton =
+      document.getElementsByClassName("dropdown-algorithm")[0];
+    let dataStructureDropdown =
+      document.getElementsByClassName("dropdown-content")[0];
 
+    if (
+      algorithmDropdownButton.classList.contains("open") ||
+      dataStructureDropdown.classList.contains("open")
+    ) {
+      algorithmDropdownButton.classList.remove("open");
+      dataStructureDropdown.classList.remove("open");
+    }
     if (!algorithmParameters.isRunning) {
-      if (dataStructure === "Stack") {
-        if (algorithmButton === "Push") {
-          // pushStack(stack, algorithmParameters);
+      if (dataStructure === "Queue") {
+        if (algorithmButton === "Enqueue") {
+          enqueue(queue, algorithmParameters);
         }
-        if (algorithmButton === "Pop") {
-          // popStack(stack, algorithmParameters);
+        if (algorithmButton === "Dequeue") {
+          dequeue(queue, algorithmParameters);
         }
       }
 
@@ -46,8 +60,6 @@ function AlgorithmStartButton() {
             algorithmParameters
           );
         } else {
-          console.log("None");
-          console.log(algorithmButton);
         }
       }
     }

@@ -3,7 +3,7 @@
   margin-left: auto;
   margin-right: auto;
   height: 10rem;
-  width: 60%;
+  width: 40%;
 }
 
 .queue {
@@ -20,25 +20,10 @@
   width: 2rem;
   background-color: lightgreen;
   transition-duration: 1s;
+  transition-timing-function: ease-out;
 }
 
-.square:nth-child(0) {
-  margin-right: 0rem;
-}
-.square:nth-child(1) {
-  margin-right: 2.2rem;
-}
-.square:nth-child(2) {
-  margin-right: 4.4rem;
-}
-.square:nth-child(3) {
-  margin-right: 6.6rem;
-}
-.square:nth-child(4) {
-  margin-right: 8.8rem;
-}
-
-.para {
+.line {
   display: flex;
   justify-content: space-between;
 }
@@ -46,4 +31,14 @@
 p {
   display: inline-block;
   margin: 5px;
+}
+
+@keyframes appear {
+  0% {
+    margin-right: 30rem;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

@@ -7,13 +7,17 @@ const bfs = (startingNode, grid, algorithmParameters) => {
     let nodesList = [];
     while (neighbours.length > 0) {
       let neighbour = neighbours.shift();
-      setTimeout(animateVisitedNodes, algorithmParameters.speed, neighbour);
-      algorithmParameters.speed += 15;
+      setTimeout(
+        animateVisitedNodes,
+        algorithmParameters.graph.speed,
+        neighbour
+      );
+      algorithmParameters.graph.speed += 15;
       if (neighbour.isFinishing === true) {
         targetNode = neighbour;
         setTimeout(() => {
           algorithmParameters.isRunning = false;
-        }, algorithmParameters.speed);
+        }, algorithmParameters.graph.speed);
         break;
       }
       nodesList = getNeigbours(grid, neighbour);
@@ -42,11 +46,15 @@ function backtrack(targetNode, algorithmParameters) {
   let currentNode = targetNode;
 
   while (currentNode.previousNode != null) {
-    setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
+    setTimeout(
+      animateBacktracking,
+      algorithmParameters.graph.speed,
+      currentNode
+    );
     currentNode = currentNode.previousNode;
-    algorithmParameters.speed += 10;
+    algorithmParameters.graph.speed += 10;
   }
-  setTimeout(animateBacktracking, algorithmParameters.speed, currentNode);
+  setTimeout(animateBacktracking, algorithmParameters.graph.speed, currentNode);
 }
 
 function getNeigbours(grid, node) {
@@ -97,12 +105,12 @@ const dfs = (grid, node, algorithmParameters) => {
     backtrack(targetNode, algorithmParameters);
     setTimeout(() => {
       algorithmParameters.isRunning = false;
-    }, algorithmParameters.speed);
+    }, algorithmParameters.graph.speed);
   }
   algorithmParameters.isRunning = true;
-  algorithmParameters.speed += 10;
+  algorithmParameters.graph.speed += 10;
   node.visited = true;
-  setTimeout(animateVisitedNodes, algorithmParameters.speed, node);
+  setTimeout(animateVisitedNodes, algorithmParameters.graph.speed, node);
   if (
     node.row + 1 < grid.length &&
     grid[node.row + 1][node.column].visited === false

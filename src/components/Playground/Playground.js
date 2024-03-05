@@ -9,12 +9,13 @@ import { DsaContext } from "../../App";
 function Playground() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
   let dataStructureComponent = null;
-  console.log(algorithmParameters.isRunning);
   if (dataStructure === "Array") {
     // return <Graph />;
   }
   if (dataStructure === "Queue") {
-    dataStructureComponent = <Queue />;
+    dataStructureComponent = (
+      <Queue algorithmParameters={algorithmParameters} />
+    );
   }
   if (dataStructure === "Stack") {
     dataStructureComponent = <FStack />;

@@ -3,8 +3,7 @@ import { grid } from "../../../Playground/Graph/Graph";
 function resetGraph(algorithmParameters) {
   if (!algorithmParameters.isRunning) {
     algorithmParameters.state = false;
-    algorithmParameters.speed = 15;
-    algorithmParameters.backtrackingSpeed = 15;
+    algorithmParameters.graph.speed = 15;
     for (let numOfRows = 0; numOfRows < grid.length; numOfRows++) {
       let row = grid[numOfRows];
       for (let numOfColumns = 0; numOfColumns < row.length; numOfColumns++) {

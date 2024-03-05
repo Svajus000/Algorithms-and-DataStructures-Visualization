@@ -8,10 +8,19 @@ const DsaContext = createContext(null);
 
 function App() {
   const algorithmParameters = {
-    speed: 15,
-    backtrackingSpeed: 15,
     isRunning: false,
     state: false,
+    graph: {
+      speed: 15,
+    },
+    stack: {
+      isInside: false,
+    },
+    queue: {
+      order: 0,
+      lastElement: null,
+      enqueue: null,
+    },
   };
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (
