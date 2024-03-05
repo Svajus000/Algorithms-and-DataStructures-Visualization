@@ -29,6 +29,9 @@ function Square({ id, position, movement }) {
 
 function Queue(algorithmParameters) {
   queue.items = [0, 1, 2, 3, 4];
+  algorithmParameters.algorithmParameters.queue.order = 0;
+  algorithmParameters.algorithmParameters.queue.lastElement =
+    queue.items.length;
   const [line, setLine] = useState(queue.items);
   algorithmParameters.algorithmParameters.queue.enqueue = setLine;
   let position = null;
