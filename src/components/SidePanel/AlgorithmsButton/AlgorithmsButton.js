@@ -3,9 +3,9 @@ import React, { useState, useContext } from "react";
 import { DsaContext } from "../../../App";
 
 const algorithms = {
-  Array: [],
   Queue: ["Enqueue", "Dequeue"],
   Stack: ["Push", "Pop"],
+  HashTable: ["GetItem", "SetItem"],
   LinkedList: [],
   Trees: [],
   Graph: ["Breath-First-Search", "Depth-First-Search"],

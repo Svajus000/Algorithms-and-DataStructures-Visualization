@@ -3,10 +3,9 @@ import "./DataStructureDropdown.css";
 import { DsaContext } from "../../../App.js";
 
 const dataStuctures = [
-  "Array",
   "Queue",
   "Stack",
-  "HashMap",
+  "HashTable",
   "LinkedList",
   "Trees",
   "Graph",

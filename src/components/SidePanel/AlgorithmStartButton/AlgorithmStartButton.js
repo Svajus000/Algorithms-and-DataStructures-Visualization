@@ -4,14 +4,21 @@ import { dfs, bfs } from "../AlgorithmsButton/GraphAlgorithms/GraphAlgorithms";
 import { useContext } from "react";
 import { DsaContext } from "../../../App";
 import { stack } from "../../Playground/Stack/Stack";
+import { queue } from "../../Playground/Queue/Queue";
+import { hashTable } from "../../Playground/HashTable/HashTable";
 import resetGraph from "../ResetButton/ResetGraph/ResetGraph";
 import {
   popStack,
   pushStack,
 } from "../AlgorithmsButton/StackAlgorithms/StackAlgorithms";
-import { dequeue } from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
-import { enqueue } from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
-import { queue } from "../../Playground/Queue/Queue";
+import {
+  dequeue,
+  enqueue,
+} from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
+import {
+  setItem,
+  getItem,
+} from "../AlgorithmsButton/HashTableAlgorithms/HashTableAlgorithms";
 
 function AlgorithmStartButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
@@ -39,13 +46,20 @@ function AlgorithmStartButton() {
           dequeue(queue, algorithmParameters);
         }
       }
-
       if (dataStructure === "Stack") {
         if (algorithmButton === "Push") {
           pushStack(stack, algorithmParameters);
         }
         if (algorithmButton === "Pop") {
           popStack(stack, algorithmParameters);
+        }
+      }
+      if (dataStructure === "HashTable") {
+        if (algorithmButton === "GetItem") {
+          getItem(hashTable, algorithmParameters);
+        }
+        if (algorithmButton === "SetItem") {
+          setItem(hashTable, algorithmParameters);
         }
       }
       if (dataStructure === "Graph") {

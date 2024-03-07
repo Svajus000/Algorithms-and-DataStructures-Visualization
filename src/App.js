@@ -21,6 +21,10 @@ function App() {
       lastElement: null,
       enqueue: null,
     },
+    hashTable: {
+      order: 0,
+      getItem: null,
+    },
   };
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (

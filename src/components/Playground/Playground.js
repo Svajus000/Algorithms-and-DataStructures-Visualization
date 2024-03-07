@@ -2,7 +2,7 @@ import "./Playground.css";
 import Graph from "./Graph/Graph";
 import Queue from "./Queue/Queue";
 import FStack from "./Stack/Stack";
-import HashMapA from "./HashMap/HashMap";
+import HashMapA from "./HashTable/HashTable";
 import { useContext } from "react";
 import { DsaContext } from "../../App";
 
@@ -20,7 +20,7 @@ function Playground() {
   if (dataStructure === "Stack") {
     dataStructureComponent = <FStack />;
   }
-  if (dataStructure === "HashMap") {
+  if (dataStructure === "HashTable") {
     dataStructureComponent = <HashMapA />;
   }
   if (dataStructure === "LinkedList") {

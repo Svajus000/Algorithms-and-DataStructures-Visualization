@@ -1,17 +1,21 @@
-import "./ResetButton.css";
 import { DsaContext } from "../../../App";
 import { useContext } from "react";
 import resetGraph from "./ResetGraph/ResetGraph";
 import resetStack from "./ResetStack/ResetStack";
 import resetQueue from "./ResetQueue/ResetQueue";
+import resetHashTable from "./ResetHashTable/ResetHashTable";
 import { stack } from "../../Playground/Stack/Stack";
 import { queue } from "../../Playground/Queue/Queue";
+import { hashTable } from "../../Playground/HashTable/HashTable";
 
 function ResetButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
 
   function handleClick() {
     if (!algorithmParameters.isRunning) {
+      if (dataStructure === "HashTable") {
+        resetHashTable(hashTable, algorithmParameters);
+      }
       if (dataStructure === "Queue") {
         resetQueue(queue, algorithmParameters);
       }
