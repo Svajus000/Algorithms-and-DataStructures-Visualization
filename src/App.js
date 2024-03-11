@@ -25,6 +25,14 @@ function App() {
       order: 0,
       getItem: null,
     },
+    linkedList: {
+      current: null,
+      prev: null,
+      index: null,
+      counter: null,
+      type: null,
+      previousElementsList: [],
+    },
   };
   const [dataStructure, setDataStructure] = useState("Choose algorithm");
   return (

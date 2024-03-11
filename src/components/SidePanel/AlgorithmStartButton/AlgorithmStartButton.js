@@ -7,6 +7,7 @@ import { stack } from "../../Playground/Stack/Stack";
 import { queue } from "../../Playground/Queue/Queue";
 import { hashTable } from "../../Playground/HashTable/HashTable";
 import resetGraph from "../ResetButton/ResetGraph/ResetGraph";
+import resetLinkedList from "../ResetButton/ResetLinkedList/ResetLinkedList";
 import {
   popStack,
   pushStack,
@@ -19,6 +20,11 @@ import {
   setItem,
   getItem,
 } from "../AlgorithmsButton/HashTableAlgorithms/HashTableAlgorithms";
+import {
+  insertOrDeleteTarget,
+  findTarget,
+} from "../AlgorithmsButton/LinkedListAlgorithms/LinkedListAlgorithms";
+import { linkedList, Node } from "../../Playground/LinkedList/LinkedList";
 
 function AlgorithmStartButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
@@ -60,6 +66,18 @@ function AlgorithmStartButton() {
         }
         if (algorithmButton === "SetItem") {
           setItem(hashTable, algorithmParameters);
+        }
+      }
+      if (dataStructure === "LinkedList") {
+        resetLinkedList(linkedList, Node, algorithmParameters);
+        if (algorithmButton === "FindTarget") {
+          findTarget(algorithmParameters);
+        }
+        if (algorithmButton === "InsertTarget") {
+          insertOrDeleteTarget("insert", algorithmParameters);
+        }
+        if (algorithmButton === "DeleteTarget") {
+          insertOrDeleteTarget("delete", algorithmParameters);
         }
       }
       if (dataStructure === "Graph") {

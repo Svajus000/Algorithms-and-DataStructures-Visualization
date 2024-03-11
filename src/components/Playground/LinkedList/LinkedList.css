@@ -1,0 +1,124 @@
+.dsa--linkedList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p {
+  color: black;
+}
+
+h1 {
+  text-align: center;
+  color: black;
+}
+
+.linkedList {
+  display: flex;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  height: 3rem;
+  transition-duration: 0.8s;
+}
+
+.node--linkedList {
+  display: flex;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  background-color: black;
+  border: 3px solid black;
+}
+
+#head {
+  width: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  transition: transform 1s ease-in;
+}
+
+#prev {
+  position: absolute;
+  width: 118px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10px;
+  transition: transform 0.5s ease-in;
+  top: 3.4rem;
+}
+
+#head > p {
+  margin: 4px;
+  color: black;
+}
+
+.pointer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform-origin: -50% 50%;
+  transition-duration: 1s;
+}
+
+.line--horizontal {
+  width: 2rem;
+  height: 0.5rem;
+  background-color: black;
+  transform-origin: 0% 50%;
+}
+
+.line--vertical {
+  width: 0.5rem;
+  height: 2rem;
+  background-color: black;
+}
+
+.arrowHead--right {
+  border-left: 1rem solid rebeccapurple;
+  border-top: 1rem solid transparent;
+  border-bottom: 1rem solid transparent;
+}
+
+.arrowHead--bottom {
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid rebeccapurple;
+  border-left: 1rem solid transparent;
+}
+
+.target {
+  display: inline-block;
+}
+
+.targetIndex {
+  display: inline-block;
+}
+
+.targetPointer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  transform-origin: -50% 50%;
+}
+
+.targetNode {
+  display: flex;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+  position: absolute;
+  margin-top: -3.4rem;
+  margin-left: 0.2rem;
+  transition-duration: 1s;
+}

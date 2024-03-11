@@ -6,7 +6,7 @@ const algorithms = {
   Queue: ["Enqueue", "Dequeue"],
   Stack: ["Push", "Pop"],
   HashTable: ["GetItem", "SetItem"],
-  LinkedList: [],
+  LinkedList: ["FindTarget", "InsertTarget", "DeleteTarget"],
   Trees: [],
   Graph: ["Breath-First-Search", "Depth-First-Search"],
 };
