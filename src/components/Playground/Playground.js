@@ -4,6 +4,7 @@ import Queue from "./Queue/Queue";
 import FStack from "./Stack/Stack";
 import HashMapA from "./HashTable/HashTable";
 import ALinkedList from "./LinkedList/LinkedList";
+import TreeElement from "./Tree/Tree";
 import { useContext } from "react";
 import { DsaContext } from "../../App";
 
@@ -24,8 +25,8 @@ function Playground() {
   if (dataStructure === "LinkedList") {
     dataStructureComponent = <ALinkedList />;
   }
-  if (dataStructure === "Tree") {
-    // return <Graph />;
+  if (dataStructure === "Trees") {
+    dataStructureComponent = <TreeElement />;
   }
   if (dataStructure === "Graph") {
     dataStructureComponent = <Graph />;

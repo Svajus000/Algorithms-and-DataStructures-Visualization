@@ -9,6 +9,7 @@ import { stack } from "../../Playground/Stack/Stack";
 import { queue } from "../../Playground/Queue/Queue";
 import { hashTable } from "../../Playground/HashTable/HashTable";
 import { linkedList, Node } from "../../Playground/LinkedList/LinkedList";
+import resetTree from "./ResetTree/ResetTree";
 
 function ResetButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
@@ -26,6 +27,9 @@ function ResetButton() {
       }
       if (dataStructure === "LinkedList") {
         resetLinkedList(linkedList, Node, algorithmParameters);
+      }
+      if (dataStructure === "Trees") {
+        resetTree(algorithmParameters);
       }
       if (dataStructure === "Graph") {
         resetGraph(algorithmParameters);

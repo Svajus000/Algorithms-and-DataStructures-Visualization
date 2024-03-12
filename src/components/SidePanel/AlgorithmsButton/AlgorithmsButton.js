@@ -7,7 +7,7 @@ const algorithms = {
   Stack: ["Push", "Pop"],
   HashTable: ["GetItem", "SetItem"],
   LinkedList: ["FindTarget", "InsertTarget", "DeleteTarget"],
-  Trees: [],
+  Trees: ["InsertTarget", "DeleteTarget"],
   Graph: ["Breath-First-Search", "Depth-First-Search"],
 };
 

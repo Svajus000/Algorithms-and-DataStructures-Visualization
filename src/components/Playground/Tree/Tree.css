@@ -1,0 +1,170 @@
+.dsa--Tree {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 80%;
+  height: 100%;
+}
+
+.target--tree {
+  margin-top: 7rem;
+  margin-right: 10rem;
+}
+
+.nodeContainer--layer1 {
+  display: flex;
+  flex-direction: column;
+  transition-duration: 0.8s;
+  align-items: center;
+  margin: 0.6rem 3.3rem;
+}
+
+.nodeContainer--layer2 {
+  display: flex;
+  flex-direction: column;
+  transition-duration: 0.8s;
+  align-items: center;
+  margin: 0.7rem 3.3rem;
+}
+
+.nodeContainer--layer2:first-child .pointer--tree--right--layer2 {
+  transform: rotate(-15deg);
+}
+
+.nodeContainer--layer2:first-child
+  .pointer--tree--left--layer2
+  .line--vertical--tree {
+  height: 4.75rem;
+}
+
+.nodeContainer--layer2:last-child .pointer--tree--left--layer2 {
+  transform: rotate(15deg);
+}
+
+.nodeContainer--layer2:last-child
+  .pointer--tree--right--layer2
+  .line--vertical--tree {
+  height: 4.75rem;
+}
+
+.nodeContainer--layer3 {
+  display: flex;
+  flex-direction: column;
+  transition-duration: 0.8s;
+  align-items: center;
+  margin: 2.2rem 0rem;
+  width: 98px;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.node--tree {
+  display: flex;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  position: relative;
+  line-height: 30px;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+}
+
+.pointer--tree--left--layer1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(45deg);
+}
+
+.pointer--tree--right--layer1 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(-45deg);
+}
+
+.pointer--tree--left--layer2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(30deg);
+}
+
+.pointer--tree--left--layer2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(30deg);
+}
+
+.pointer--tree--right--layer2 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(-30deg);
+}
+
+.pointer--tree--left--layer3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(20deg);
+}
+
+.pointer--tree--right--layer3 {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform-origin: 50% -30%;
+  transition-duration: 1s;
+  margin-top: 3.5rem;
+  transform: rotate(-20deg);
+}
+
+.line--vertical--tree {
+  width: 0.5rem;
+  height: 4rem;
+  background-color: lightcoral;
+}
+.arrowHead--bottom--tree {
+  border-right: 1rem solid transparent;
+  border-top: 1rem solid rebeccapurple;
+  border-left: 1rem solid transparent;
+}
+
+.layer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.8rem;
+}
