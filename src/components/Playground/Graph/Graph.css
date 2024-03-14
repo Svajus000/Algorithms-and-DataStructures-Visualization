@@ -7,10 +7,10 @@
 
 .row {
   display: grid;
-  grid-template-columns: repeat(55, 1fr);
+  grid-template-columns: repeat(40, 1fr);
 }
 
-.node {
+.node-graph {
   border: 1px solid black;
   padding: 8px;
 }

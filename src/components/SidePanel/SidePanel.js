@@ -10,10 +10,9 @@ export default function SidePanel() {
       <div className="sidepanel-inner">
         <div className="sidepanel-header">
           <p className="sidepanel-header-heading">
-            <b>Data Structures & Algorithms</b>
+            Data Structures & Algorithms
           </p>
         </div>
-
         <DataStructureDropdown />
         <ResetButton />
         <AlgorithmsButton />

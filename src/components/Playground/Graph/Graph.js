@@ -1,7 +1,7 @@
 import "./Graph.css";
 
 export let startingNode;
-export const grid = createGrid(40, 55);
+export const grid = createGrid(40, 40);
 
 function createGrid(row, column) {
   const grid = [];
@@ -17,13 +17,13 @@ function createGrid(row, column) {
         distance: Infinity,
         previousNode: null,
       };
-      if (node.row === 20 && node.column === 20) {
+      if (node.row === 10 && node.column === 10) {
         startingNode = node;
         node.isStarting = true;
         node.visited = true;
         node.distance = 0;
       }
-      if (node.row === 25 && node.column === 35) {
+      if (node.row === 20 && node.column === 20) {
         node.isFinishing = true;
       }
       grid[i].push(node);
@@ -39,7 +39,7 @@ export default function Graph() {
         <div
           key={`node-${node.row}-${node.column}`}
           id={`node-${node.row}-${node.column}`}
-          className={`node ${node.isStarting ? "isStarting" : ""} ${
+          className={`node-graph ${node.isStarting ? "isStarting" : ""} ${
             node.isFinishing ? "isFinishing" : ""
           }`}
         ></div>

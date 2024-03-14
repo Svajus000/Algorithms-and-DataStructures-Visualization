@@ -99,21 +99,24 @@ function ValuesList() {
       </li>
     );
   });
-  return <ul>[{listValues}]</ul>;
+  return <ul className="valuesList">[{listValues}]</ul>;
 }
 
 function HashMapA() {
   return (
-    <div>
-      <div className="heade">
+    <div className="header-hashTable">
+      <div className="hashTable">
         <ValuesList />
-        <div className="hashFunc"></div>
+        <div className="hashContainer">
+          <p>Hash Function</p>
+          <div className="hashFunction"></div>
+        </div>
         <div className="empty"></div>
         <HashMap />
       </div>
       <div>
         <div id="form" action="">
-          <label for="item">Get Item:</label>
+          <label for="item">Get Value:</label>
           <input type="text" id="item" name="item"></input>
         </div>
         <div className="behind"></div>

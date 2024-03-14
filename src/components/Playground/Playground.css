@@ -1,5 +1,15 @@
 .playground {
   width: 60%;
   height: 100vh;
-  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heading-playground {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 3rem;
+  color: #2d3f41;
 }

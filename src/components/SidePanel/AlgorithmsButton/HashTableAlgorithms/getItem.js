@@ -1,59 +1,4 @@
-import { values } from "../../../Playground/HashTable/HashTable";
-
-function setItem(hashTable, algorithmParameters) {
-  let order = algorithmParameters.hashTable.order;
-  if (order < values.length && !algorithmParameters.isRunning) {
-    algorithmParameters.isRunning = true;
-    setItemAnimation(hashTable, algorithmParameters, order);
-    algorithmParameters.hashTable.order++;
-  }
-}
-
-function setItemAnimation(hashTable, algorithmParameters, order) {
-  let computatedValue = hashFunction(values[order][0]);
-  let hashElement = document.getElementsByClassName("hashFunc")[0];
-  let empty = document.getElementsByClassName("empty")[0];
-  let listElement = document.getElementsByClassName(`listItem ${order}`)[0];
-  let valueElement = document.getElementsByClassName(
-    `value ${computatedValue}`
-  )[0];
-  let hashValue = document.getElementsByClassName(`key ${computatedValue}`)[0];
-
-  let hashBoundaries = hashElement.getBoundingClientRect();
-  let listElementBoundaries = listElement.getBoundingClientRect();
-  let valueElementBoundaries = valueElement.getBoundingClientRect();
-
-  let key = document.createElement("div");
-  key.setAttribute("class", "calculatedKey");
-  key.innerHTML = computatedValue;
-  empty.appendChild(key);
-  let keyBoundaries = key.getBoundingClientRect();
-
-  listElement.style.transform = `translate(${
-    hashBoundaries.left - listElementBoundaries.left
-  }px,${hashBoundaries.top - listElementBoundaries.top + 55}px)`;
-
-  let hashBound = hashValue.getBoundingClientRect();
-  setTimeout(() => {
-    key.style.transform = `translate(${hashBound.left - keyBoundaries.left}px,${
-      hashBound.top - keyBoundaries.top
-    }px)`;
-  }, 2000);
-  setTimeout(() => {
-    listElement.style.transform = `translate(${
-      valueElementBoundaries.left - listElementBoundaries.left + 5
-    }px,${
-      valueElementBoundaries.top -
-      listElementBoundaries.top +
-      2 +
-      hashTable.dataMap[computatedValue].length * 24
-    }px`;
-    hashTable.dataMap[computatedValue].push(values[order]);
-  }, 3000);
-  setTimeout(() => {
-    algorithmParameters.isRunning = false;
-  }, 4000);
-}
+import hashFunction from "./hashFunction";
 
 function getItem(hashTable, algorithmParameters) {
   let itemValue = document.querySelector("#item").value;
@@ -65,7 +10,7 @@ function getItem(hashTable, algorithmParameters) {
 
 function getItemAnimation(itemValue, algorithmParameters) {
   let computatedValue = hashFunction(itemValue);
-  let hashElement = document.getElementsByClassName("hashFunc")[0];
+  let hashElement = document.getElementsByClassName("hashFunction")[0];
   let empty = document.getElementsByClassName("empty")[0];
   let hashValue = document.getElementsByClassName(`key ${computatedValue}`)[0];
   let behind = document.getElementsByClassName("behind")[0];
@@ -90,7 +35,7 @@ function getItemAnimation(itemValue, algorithmParameters) {
   let formBoundaries = form.getBoundingClientRect();
 
   itemElement.style.transform = `translate(${
-    hashBoundaries.left - itemElementBoundaries.left
+    hashBoundaries.left - itemElementBoundaries.left + 10
   }px,${hashBoundaries.top - itemElementBoundaries.top + 55}px)`;
 
   if (algorithmParameters.hashTable.getItem) {
@@ -98,8 +43,11 @@ function getItemAnimation(itemValue, algorithmParameters) {
     keyElementParent.removeChild(algorithmParameters.hashTable.getItem);
     algorithmParameters.hashTable.getItem = null;
   }
-
   setTimeout(() => {
+    hashElement.style.animation = "shake 1s";
+  }, 1000);
+  setTimeout(() => {
+    hashElement.style.animation = "none";
     key.style.transform = `translate(${hashBound.left - keyBoundaries.left}px,${
       hashBound.top - keyBoundaries.top
     }px)`;
@@ -128,13 +76,4 @@ function getItemAnimation(itemValue, algorithmParameters) {
   }, 4000);
 }
 
-function hashFunction(word) {
-  let adress = 0;
-  for (let i = 0; i < word.length; i++) {
-    adress += word.charCodeAt(i);
-  }
-  adress = adress % values.length;
-  return adress;
-}
-
-export { setItem, getItem };
+export default getItem;

@@ -1,13 +1,14 @@
-import React, { useState, useContext } from "react";
 import "./DataStructureDropdown.css";
+import React, { useState, useContext } from "react";
 import { DsaContext } from "../../../App.js";
+import createWarning from "../Warning/warning.js";
 
 const dataStuctures = [
   "Queue",
   "Stack",
   "HashTable",
   "LinkedList",
-  "Trees",
+  "Tree",
   "Graph",
 ];
 
@@ -15,10 +16,25 @@ export default function DataStructureDropdown() {
   const { dataStructure, setDataStructure, algorithmParameters } =
     useContext(DsaContext);
   const [isOpen, setIsOpen] = useState(false);
+  const algorithmsButton = document.getElementById("Algorithms");
   const toggleDropdown = (event) => {
+    let warning = document.getElementsByClassName("warning")[0];
     if (!algorithmParameters.isRunning) {
+      if (warning) {
+        warning.remove();
+      }
       setIsOpen(!isOpen);
+      if (event.target.innerHTML !== dataStructure) {
+        algorithmsButton.innerText = "Choose Algorithm";
+      }
       setDataStructure(event.target.innerHTML);
+    } else {
+      if (warning) {
+        warning.remove();
+        createWarning("Algorithm is running");
+      } else {
+        createWarning("Algorithm is running");
+      }
     }
   };
   return (

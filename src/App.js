@@ -34,7 +34,7 @@ function App() {
       previousElementsList: [],
     },
   };
-  const [dataStructure, setDataStructure] = useState("Choose algorithm");
+  const [dataStructure, setDataStructure] = useState("Choose Data Structure");
   return (
     <DsaContext.Provider
       value={{

@@ -11,6 +11,7 @@ import { DsaContext } from "../../App";
 function Playground() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
   let dataStructureComponent = null;
+
   if (dataStructure === "Queue") {
     dataStructureComponent = (
       <Queue algorithmParameters={algorithmParameters} />
@@ -25,13 +26,17 @@ function Playground() {
   if (dataStructure === "LinkedList") {
     dataStructureComponent = <ALinkedList />;
   }
-  if (dataStructure === "Trees") {
+  if (dataStructure === "Tree") {
     dataStructureComponent = <TreeElement />;
   }
   if (dataStructure === "Graph") {
     dataStructureComponent = <Graph />;
   }
-
+  if (dataStructureComponent === null) {
+    dataStructureComponent = (
+      <h1 className="heading-playground">Choose Data Structure</h1>
+    );
+  }
   return <div className="playground">{dataStructureComponent}</div>;
 }
 

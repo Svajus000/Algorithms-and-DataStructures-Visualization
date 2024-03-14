@@ -2,5 +2,50 @@
   position: relative;
   width: 20%;
   height: 100vh;
-  background-color: lightslategrey;
+  background-color: #2c3233;
+}
+
+.instructions-inner {
+  display: flex;
+  flex-direction: column;
+  margin: 0rem 0.5rem;
+}
+
+.instructions-header {
+  position: relative;
+  height: 8%;
+  width: 100%;
+  border-bottom: 1px solid grey;
+}
+
+.instructions-header-heading {
+  height: 4rem;
+  padding-top: 1rem;
+  font-size: 1.25rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  color: white;
+}
+
+.instruction {
+  margin-top: 1rem;
+}
+
+.introduction {
+  margin-top: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  font-family: "Poppins";
+  font-style: normal;
+  color: white;
+}
+
+.note {
+  font-size: 1.125rem;
+  font-family: "Poppins";
+  font-style: normal;
+  color: #06d8ea;
 }

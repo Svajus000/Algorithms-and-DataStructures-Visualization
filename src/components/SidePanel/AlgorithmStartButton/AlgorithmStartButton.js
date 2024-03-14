@@ -1,46 +1,43 @@
-import { startingNode, grid } from "../../Playground/Graph/Graph";
 import "./AlgorithmStartButton.css";
-import { dfs, bfs } from "../AlgorithmsButton/GraphAlgorithms/GraphAlgorithms";
 import { useContext } from "react";
 import { DsaContext } from "../../../App";
-import { stack } from "../../Playground/Stack/Stack";
+import createWarning from "../Warning/warning";
+// <<----QUEUE---->>
 import { queue } from "../../Playground/Queue/Queue";
+import dequeue from "../AlgorithmsButton/QueueAlgorithms/dequeue";
+import enqueue from "../AlgorithmsButton/QueueAlgorithms/enqueue";
+// <<----STACK---->>
+import { stack } from "../../Playground/Stack/Stack";
+import popStack from "../AlgorithmsButton/StackAlgorithms/pop";
+import pushStack from "../AlgorithmsButton/StackAlgorithms/push";
+// <<----HASH-TABLE---->>
 import { hashTable } from "../../Playground/HashTable/HashTable";
-import resetGraph from "../ResetButton/ResetGraph/ResetGraph";
+import setItem from "../AlgorithmsButton/HashTableAlgorithms/setItem";
+import getItem from "../AlgorithmsButton/HashTableAlgorithms/getItem";
+// <<----LINKED-LIST---->>
 import resetLinkedList from "../ResetButton/ResetLinkedList/ResetLinkedList";
-import resetTree from "../ResetButton/ResetTree/ResetTree";
-import {
-  popStack,
-  pushStack,
-} from "../AlgorithmsButton/StackAlgorithms/StackAlgorithms";
-import {
-  dequeue,
-  enqueue,
-} from "../AlgorithmsButton/QueueAlgorithms/QueueAlgorithms";
-import {
-  setItem,
-  getItem,
-} from "../AlgorithmsButton/HashTableAlgorithms/HashTableAlgorithms";
-import {
-  insertOrDeleteTarget,
-  findTarget,
-} from "../AlgorithmsButton/LinkedListAlgorithms/LinkedListAlgorithms";
+import insertOrDeleteTarget from "../AlgorithmsButton/LinkedListAlgorithms/insertOrDelete";
+import findTarget from "../AlgorithmsButton/LinkedListAlgorithms/findTarget";
 import { linkedList, Node } from "../../Playground/LinkedList/LinkedList";
-import {
-  deleteNode,
-  insert,
-} from "../AlgorithmsButton/TreeAlgorithms/TreeAlgorithms";
+// <<----TREE---->>
+import resetTree from "../ResetButton/ResetTree/ResetTree";
+import deleteNode from "../AlgorithmsButton/TreeAlgorithms/deleteNode";
+import insert from "../AlgorithmsButton/TreeAlgorithms/insert";
+// <<----GRAPH---->>
+import { startingNode, grid } from "../../Playground/Graph/Graph";
+import { dfs, bfs } from "../AlgorithmsButton/GraphAlgorithms/GraphAlgorithms";
+import resetGraph from "../ResetButton/ResetGraph/ResetGraph";
 
 function AlgorithmStartButton() {
   const { dataStructure, algorithmParameters } = useContext(DsaContext);
-  algorithmParameters.queue.lastElement = queue.items.length;
+
   function handleClick() {
     let algorithmButton = document.getElementById("Algorithms").innerHTML;
     let algorithmDropdownButton =
       document.getElementsByClassName("dropdown-algorithm")[0];
     let dataStructureDropdown =
       document.getElementsByClassName("dropdown-content")[0];
-
+    let warning = document.getElementsByClassName("warning")[0];
     if (
       algorithmDropdownButton.classList.contains("open") ||
       dataStructureDropdown.classList.contains("open")
@@ -49,6 +46,9 @@ function AlgorithmStartButton() {
       dataStructureDropdown.classList.remove("open");
     }
     if (!algorithmParameters.isRunning) {
+      if (warning) {
+        warning.remove();
+      }
       if (dataStructure === "Queue") {
         if (algorithmButton === "Enqueue") {
           enqueue(queue, algorithmParameters);
@@ -85,7 +85,7 @@ function AlgorithmStartButton() {
           insertOrDeleteTarget("delete", algorithmParameters);
         }
       }
-      if (dataStructure === "Trees") {
+      if (dataStructure === "Tree") {
         resetTree(algorithmParameters);
         if (algorithmButton === "InsertTarget") {
           insert(algorithmParameters);
@@ -105,8 +105,14 @@ function AlgorithmStartButton() {
             grid[startingNode.row + 1][startingNode.column],
             algorithmParameters
           );
-        } else {
         }
+      }
+    } else {
+      if (warning) {
+        warning.remove();
+        createWarning("Algorithm is running");
+      } else {
+        createWarning("Algorithm is running");
       }
     }
   }

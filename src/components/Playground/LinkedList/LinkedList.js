@@ -40,7 +40,7 @@ createLinkedListValues();
 function LinkList() {
   const listValues = linkedListValues.map((value) => (
     <div className="flex-container">
-      <div className="node--linkedList">
+      <div className="node-linkedList">
         <div key={`${value}`} className="value" id={`${value}`}>
           {value}
         </div>
@@ -49,7 +49,7 @@ function LinkList() {
     </div>
   ));
   return (
-    <div className="dsa--linkedList">
+    <div className="dsa-linkedList">
       <div className="lList">
         <Head />
         <ul className="linkedList">{listValues}</ul>
@@ -61,8 +61,8 @@ function LinkList() {
 function Pointer() {
   return (
     <div className="pointer">
-      <div className="line--horizontal"></div>
-      <div className="arrowHead--right"></div>
+      <div className="line-horizontal"></div>
+      <div className="arrowHead-right"></div>
     </div>
   );
 }
@@ -71,8 +71,8 @@ function Head() {
   return (
     <div id="head">
       <p>Head</p>
-      <div className="line--vertical"></div>
-      <div className="arrowHead--bottom"></div>
+      <div className="line-vertical"></div>
+      <div className="arrowHead-bottom"></div>
     </div>
   );
 }
@@ -98,8 +98,7 @@ function TargetIndex() {
 export { linkedList, Node, linkedListValues };
 export default function ALinkedList() {
   return (
-    <div>
-      <h1>Linked List</h1>
+    <div className="header-linkedList">
       <LinkList />
       <Target />
       <TargetIndex />

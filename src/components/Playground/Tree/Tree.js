@@ -115,7 +115,7 @@ function Target() {
 
 function TreeNode({ layer, value }) {
   return (
-    <div className={`nodeContainer--${layer}`}>
+    <div className={`nodeContainer ${layer}`}>
       <div className="node--tree">
         <div id={`${value}`} className="value">
           {value}
@@ -135,7 +135,7 @@ function TreeNode({ layer, value }) {
 
 function TreeElement() {
   return (
-    <div className="dsa--Tree">
+    <div className="header-tree">
       <div className="layer">
         <TreeNode layer="layer1" value="25" />
       </div>

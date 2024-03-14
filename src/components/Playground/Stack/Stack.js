@@ -43,7 +43,7 @@ function Pile({ id }) {
 
 function FStack() {
   return (
-    <div className="header">
+    <div className="header-stack">
       <Stack />
       <ItemsList />
     </div>

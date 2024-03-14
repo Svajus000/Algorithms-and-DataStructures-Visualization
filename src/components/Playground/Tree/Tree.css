@@ -1,9 +1,9 @@
-.dsa--Tree {
+.header-tree {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 80%;
+  width: 100%;
   height: 100%;
 }
 
@@ -12,49 +12,40 @@
   margin-right: 10rem;
 }
 
-.nodeContainer--layer1 {
+.nodeContainer {
   display: flex;
   flex-direction: column;
   transition-duration: 0.8s;
   align-items: center;
+}
+
+.layer1 {
   margin: 0.6rem 3.3rem;
 }
 
-.nodeContainer--layer2 {
-  display: flex;
-  flex-direction: column;
-  transition-duration: 0.8s;
-  align-items: center;
+.layer2 {
   margin: 0.7rem 3.3rem;
 }
 
-.nodeContainer--layer2:first-child .pointer--tree--right--layer2 {
+.layer3 {
+  margin: 2.2rem 0rem;
+  width: 6.125rem;
+}
+
+.layer2:first-child .pointer--tree--right--layer2 {
   transform: rotate(-15deg);
 }
 
-.nodeContainer--layer2:first-child
-  .pointer--tree--left--layer2
-  .line--vertical--tree {
+.layer2:first-child .pointer--tree--left--layer2 .line--vertical--tree {
   height: 4.75rem;
 }
 
-.nodeContainer--layer2:last-child .pointer--tree--left--layer2 {
+.layer2:last-child .pointer--tree--left--layer2 {
   transform: rotate(15deg);
 }
 
-.nodeContainer--layer2:last-child
-  .pointer--tree--right--layer2
-  .line--vertical--tree {
+.layer2:last-child .pointer--tree--right--layer2 .line--vertical--tree {
   height: 4.75rem;
-}
-
-.nodeContainer--layer3 {
-  display: flex;
-  flex-direction: column;
-  transition-duration: 0.8s;
-  align-items: center;
-  margin: 2.2rem 0rem;
-  width: 98px;
 }
 
 .hide {
@@ -153,8 +144,9 @@
 .line--vertical--tree {
   width: 0.5rem;
   height: 4rem;
-  background-color: lightcoral;
+  background-color: black;
 }
+
 .arrowHead--bottom--tree {
   border-right: 1rem solid transparent;
   border-top: 1rem solid rebeccapurple;

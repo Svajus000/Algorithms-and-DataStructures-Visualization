@@ -43,7 +43,7 @@ function Queue(algorithmParameters) {
   });
 
   return (
-    <div className="head">
+    <div className="header-queue">
       <div className="queue">{squareList}</div>
       <div className="line">
         <p>Back</p>

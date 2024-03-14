@@ -3,6 +3,7 @@ import { values } from "../../../Playground/HashTable/HashTable";
 function resetHashTable(hashTable, algorithmParameters) {
   const empty = document.getElementsByClassName("empty")[0];
   console.log(empty.childNodes);
+
   for (let i = 0; i < hashTable.dataMap.length; i++) {
     hashTable.dataMap[i] = [];
   }

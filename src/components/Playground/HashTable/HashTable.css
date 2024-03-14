@@ -1,38 +1,49 @@
-.heade {
+.header-hashTable {
+  justify-self: center;
+  align-self: center;
+  height: 50%;
+  width: 100%;
+}
+
+.hashTable {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  height: 60%;
-  width: 100%;
 }
 
 .hashMap {
   margin: 10px;
 }
 
-.hashFunc {
-  display: flex;
-  align-items: center;
+.hashContainer {
+  align-self: center;
   justify-content: center;
-  width: 130px;
-  height: 130px;
+  z-index: 5;
+}
+
+.hashFunction {
+  display: flex;
+  width: 8.125rem;
+  height: 8.125rem;
   background-color: lightblue;
-  z-index: 2;
+  z-index: 5;
+}
+
+.valuesList {
+  align-self: center;
 }
 
 th {
-  height: 40px;
-  width: 40px;
+  height: 2.5rem;
+  width: 2.5rem;
   border: 2px solid black;
   color: black;
   text-align: center;
 }
 
 td {
-  width: 150px;
-  height: 60px;
+  width: 9.375rem;
+  height: 3.75rem;
   border: 2px solid black;
-  padding-left: 5px;
 }
 
 ul {
@@ -46,20 +57,13 @@ li {
   color: black;
 }
 
-.startButton {
-  position: absolute;
-  align-self: start;
-  margin: 10px;
-  width: 80px;
-  height: 30px;
-}
-
 .listItem {
   transition-duration: 1s;
 }
 
 .key {
   display: inline-block;
+  color: black;
 }
 
 .calculatedKey {
@@ -71,10 +75,12 @@ li {
 .empty {
   display: flex;
   position: absolute;
+  align-self: center;
+  justify-self: center;
   align-items: center;
   justify-content: center;
-  width: 130px;
-  height: 130px;
+  width: 8.125rem;
+  height: 8.125rem;
   margin-left: 30.4rem;
   z-index: 3;
 }
@@ -99,9 +105,9 @@ label {
 .behind {
   position: absolute;
   background-color: aquamarine;
-  width: 186px;
-  height: 28px;
-  margin: 16px;
+  width: 11.625rem;
+  height: 1.75rem;
+  margin: 1rem;
   margin-top: -2.75rem;
   z-index: 1;
 }
@@ -126,4 +132,22 @@ label {
 .v {
   display: inline-block;
   color: black;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(5px);
+  }
+  50% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
