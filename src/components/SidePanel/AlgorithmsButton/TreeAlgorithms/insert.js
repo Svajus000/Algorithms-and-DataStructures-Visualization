@@ -9,7 +9,8 @@ function insert(algorithmParameters) {
   if (
     targetValue > 0 &&
     targetValue < 100 &&
-    !binaryTreeValue.includes(targetValue)
+    !binaryTreeValue.includes(targetValue) &&
+    !isNaN(targetValue)
   ) {
     algorithmParameters.isRunning = true;
     let target = createTargetNode(targetValue);
@@ -41,6 +42,8 @@ function insert(algorithmParameters) {
     createWarning("Target must be unique");
   } else if (isNaN(targetValue)) {
     createWarning("Target must be a number");
+  } else if (targetValue === 0) {
+    createWarning("Target must be greater than 0");
   }
 }
 

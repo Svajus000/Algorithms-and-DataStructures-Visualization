@@ -49,6 +49,7 @@ function AlgorithmStartButton() {
       if (warning) {
         warning.remove();
       }
+
       if (dataStructure === "Queue") {
         if (algorithmButton === "Enqueue") {
           enqueue(queue, algorithmParameters);
@@ -105,6 +106,26 @@ function AlgorithmStartButton() {
             grid[startingNode.row + 1][startingNode.column],
             algorithmParameters
           );
+        }
+      }
+
+      if (dataStructure === "Choose Data Structure") {
+        if (warning) {
+          warning.remove();
+          createWarning("Choose Data Structure");
+        } else {
+          createWarning("Choose Data Structure");
+        }
+      }
+      if (
+        algorithmButton === "Choose Algorithm" &&
+        dataStructure !== "Choose Data Structure"
+      ) {
+        if (warning) {
+          warning.remove();
+          createWarning("Choose Algorithm");
+        } else {
+          createWarning("Choose Algorithm");
         }
       }
     } else {

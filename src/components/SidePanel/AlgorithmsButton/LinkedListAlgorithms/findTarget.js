@@ -16,7 +16,7 @@ function findTarget(algorithmParameters) {
     createWarning("Input must be a number");
   } else if (target < 0) {
     createWarning("Input must greater than 0");
-  } else if (isNaN(target)) {
+  } else if (target >= 100) {
     createWarning("Input must lower than 100");
   } else if (target === 0) {
     createWarning("Input must greater than 0");
