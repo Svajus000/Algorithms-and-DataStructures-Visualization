@@ -7,10 +7,20 @@ import createWarning from "../../Warning/warning";
 
 let timer = null;
 function findTarget(algorithmParameters) {
-  algorithmParameters.linkedList.current = linkedList.head;
-  algorithmParameters.isRunning = true;
   let target = Number(document.getElementById("target").value);
-  timer = setInterval(findTargetAnimation, 1000, target, algorithmParameters);
+  if (!isNaN(target) && target > 0 && target < 100) {
+    algorithmParameters.linkedList.current = linkedList.head;
+    algorithmParameters.isRunning = true;
+    timer = setInterval(findTargetAnimation, 1000, target, algorithmParameters);
+  } else if (isNaN(target)) {
+    createWarning("Input must be a number");
+  } else if (target < 0) {
+    createWarning("Input must greater than 0");
+  } else if (isNaN(target)) {
+    createWarning("Input must lower than 100");
+  } else if (target === 0) {
+    createWarning("Input must greater than 0");
+  }
 }
 
 function findTargetAnimation(target, algorithmParameters) {
@@ -29,10 +39,17 @@ function findTargetAnimation(target, algorithmParameters) {
       algorithmParameters.linkedList.current.next;
     algorithmParameters.linkedList.counter++;
   } else {
+    let warning = document.getElementsByClassName("warning")[0];
+    if (warning) {
+      warning.remove();
+      createWarning("Target wasn't found");
+    } else {
+      createWarning("Target wasn't found");
+    }
     clearInterval(timer);
     algorithmParameters.linkedList.counter = 0;
     algorithmParameters.isRunning = false;
-    createWarning("Target wasn't found");
+
     return;
   }
 }
