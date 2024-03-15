@@ -1,13 +1,19 @@
+import createWarning from "../../Warning/warning";
+
 function pushStack(stack, algorithmParameters) {
-  algorithmParameters.isRunning = true;
-  for (let i = 0; i < stack.items.length; i++) {
-    let pileElement = document.getElementsByClassName(`pile ${i}`)[0];
-    setTimeout(pushAnimation, 2000 * i, pileElement, i, stack);
+  if (!algorithmParameters.stack.isInside) {
+    algorithmParameters.isRunning = true;
+    for (let i = 0; i < stack.items.length; i++) {
+      let pileElement = document.getElementsByClassName(`pile ${i}`)[0];
+      setTimeout(pushAnimation, 2000 * i, pileElement, i, stack);
+    }
+    setTimeout(() => {
+      algorithmParameters.isRunning = false;
+      algorithmParameters.stack.isInside = true;
+    }, 4000 * stack.items.length - 1 - 2000);
+  } else {
+    createWarning("There is nothing to push");
   }
-  setTimeout(() => {
-    algorithmParameters.isRunning = false;
-    algorithmParameters.stack.isInside = true;
-  }, 4000 * stack.items.length - 1 - 2000);
 }
 
 function pushAnimation(element, elementNumber) {

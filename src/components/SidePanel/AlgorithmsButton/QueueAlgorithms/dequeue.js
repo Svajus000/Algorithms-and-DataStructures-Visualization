@@ -1,3 +1,4 @@
+import createWarning from "../../Warning/warning";
 function dequeue(queue, algorithmParameters) {
   if (queue.items.length !== 0) {
     algorithmParameters.isRunning = true;
@@ -23,6 +24,8 @@ function dequeue(queue, algorithmParameters) {
     }, 750 * queue.items.length);
     queue.items.shift();
     algorithmParameters.queue.order++;
+  } else {
+    createWarning("There is no one in the queue");
   }
 }
 

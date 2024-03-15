@@ -20,7 +20,7 @@ function resetTree(algorithmParameters) {
     const element = hiddenElement[0];
     element.classList.remove("hide");
   }
-  let targetList = document.getElementsByClassName("target--tree--node");
+  let targetList = document.getElementsByClassName("target-tree-node");
   for (let i = 0; i < targetList.length; i++) {
     const element = targetList[i].parentNode;
     element.removeChild(targetList[i]);

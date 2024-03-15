@@ -127,16 +127,17 @@ button {
   font-style: normal;
   margin: 1rem 0.5rem;
   animation: shake 0.1s;
+  transform-origin: 35% 50%;
 }
 
 @keyframes shake {
   0% {
-    transform: translateX(5px) rotate(6deg);
+    transform: translateX(10px) rotate(6deg);
   }
   50% {
-    transform: translateX(-10px) rotate(-6deg);
+    transform: translateX(-10px) rotate(-12deg);
   }
   100% {
-    transform: translateX(10px) rotate(6deg);
+    transform: translateX(10px) rotate(0deg);
   }
 }

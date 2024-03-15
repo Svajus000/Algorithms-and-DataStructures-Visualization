@@ -1,10 +1,34 @@
 import hashFunction from "./hashFunction";
+import createWarning from "../../Warning/warning";
 
 function getItem(hashTable, algorithmParameters) {
   let itemValue = document.querySelector("#item").value;
-  if (itemValue.length !== 0) {
+  console.log(itemValue);
+  console.log(hashTable);
+  let includes = false;
+  for (let i = 0; i < hashTable.dataMap.length; i++) {
+    const table = hashTable.dataMap[i];
+    for (let x = 0; x < table.length; x++) {
+      const element = table[x];
+      includes = element.includes(itemValue);
+      if (includes) {
+        break;
+      }
+    }
+    if (includes) {
+      break;
+    }
+  }
+
+  if (itemValue.length !== 0 && itemValue.length < 10 && includes) {
     algorithmParameters.isRunning = true;
     getItemAnimation(itemValue, algorithmParameters);
+  } else if (itemValue.length === 0) {
+    createWarning("Get Value field is empty");
+  } else if (itemValue.length > 10) {
+    createWarning("To many characters");
+  } else if (!includes) {
+    createWarning("Key isn't in storage");
   }
 }
 
@@ -44,7 +68,7 @@ function getItemAnimation(itemValue, algorithmParameters) {
     algorithmParameters.hashTable.getItem = null;
   }
   setTimeout(() => {
-    hashElement.style.animation = "shake 1s";
+    hashElement.style.animation = "shake-1 1s";
   }, 1000);
   setTimeout(() => {
     hashElement.style.animation = "none";
@@ -72,6 +96,7 @@ function getItemAnimation(itemValue, algorithmParameters) {
         algorithmParameters.hashTable.getItem = keyElement;
       }
     }
+
     algorithmParameters.isRunning = false;
   }, 4000);
 }

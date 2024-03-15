@@ -106,9 +106,9 @@ binaryTree.insert(75);
 
 function Target() {
   return (
-    <form className="target--tree">
+    <form className="target-tree">
       <label>Target:</label>
-      <input type="text" id="target--tree"></input>
+      <input type="text" id="target-tree"></input>
     </form>
   );
 }
@@ -116,18 +116,18 @@ function Target() {
 function TreeNode({ layer, value }) {
   return (
     <div className={`nodeContainer ${layer}`}>
-      <div className="node--tree">
+      <div className="node-tree">
         <div id={`${value}`} className="value">
           {value}
         </div>
       </div>
-      <div className={`pointer--tree--left--${layer}`}>
-        <div className="line--vertical--tree"></div>
-        <div className="arrowHead--bottom--tree"></div>
+      <div className={`pointer-tree-left-${layer}`}>
+        <div className="line-vertical-tree"></div>
+        <div className="arrowHead-bottom-tree"></div>
       </div>
-      <div className={`pointer--tree--right--${layer}`}>
-        <div className="line--vertical--tree"></div>
-        <div className="arrowHead--bottom--tree"></div>
+      <div className={`pointer-tree-right-${layer}`}>
+        <div className="line-vertical-tree"></div>
+        <div className="arrowHead-bottom-tree"></div>
       </div>
     </div>
   );

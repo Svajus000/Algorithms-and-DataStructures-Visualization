@@ -1,4 +1,5 @@
 import { values } from "../../../Playground/HashTable/HashTable";
+import createWarning from "../../Warning/warning";
 import hashFunction from "./hashFunction";
 
 function setItem(hashTable, algorithmParameters) {
@@ -7,6 +8,8 @@ function setItem(hashTable, algorithmParameters) {
     algorithmParameters.isRunning = true;
     setItemAnimation(hashTable, algorithmParameters, order);
     algorithmParameters.hashTable.order++;
+  } else if (order >= values.length) {
+    createWarning("There are no more items left");
   }
 }
 
@@ -34,7 +37,7 @@ function setItemAnimation(hashTable, algorithmParameters, order) {
     hashBoundaries.left - listElementBoundaries.left + 10
   }px,${hashBoundaries.top - listElementBoundaries.top + 55}px)`;
   setTimeout(() => {
-    hashElement.style.animation = "shake 1s";
+    hashElement.style.animation = "shake-1 1s";
   }, 1000);
   let hashBound = hashValue.getBoundingClientRect();
   setTimeout(() => {

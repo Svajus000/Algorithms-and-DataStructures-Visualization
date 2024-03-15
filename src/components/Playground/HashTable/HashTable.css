@@ -134,7 +134,7 @@ label {
   color: black;
 }
 
-@keyframes shake {
+@keyframes shake-1 {
   0% {
     transform: translateX(0);
   }

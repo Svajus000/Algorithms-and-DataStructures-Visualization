@@ -2,6 +2,8 @@ import {
   linkedList,
   linkedListValues,
 } from "../../../Playground/LinkedList/LinkedList";
+import createFounded from "./components/createFoundedElement";
+import createWarning from "../../Warning/warning";
 
 let timer = null;
 function findTarget(algorithmParameters) {
@@ -13,11 +15,12 @@ function findTarget(algorithmParameters) {
 
 function findTargetAnimation(target, algorithmParameters) {
   let head = document.getElementById("head");
-  console.log("Started");
+
   if (algorithmParameters.linkedList.current.value === target) {
     clearInterval(timer);
     algorithmParameters.linkedList.counter = 0;
-    algorithmParameters.isRunning = false;
+
+    createFounded(algorithmParameters);
     return true;
   }
   if (algorithmParameters.linkedList.counter < linkedListValues.length - 1) {
@@ -29,6 +32,7 @@ function findTargetAnimation(target, algorithmParameters) {
     clearInterval(timer);
     algorithmParameters.linkedList.counter = 0;
     algorithmParameters.isRunning = false;
+    createWarning("Target wasn't found");
     return;
   }
 }

@@ -17,12 +17,15 @@ function resetLinkedList(linkedList, Node, algorithmParameters) {
   let targetNodes = document.getElementsByClassName("targetNode");
   let head = document.getElementById("head");
   let prev = document.getElementById("prev");
+  let founded = document.getElementsByClassName("founded");
   if (prev) {
     document.getElementById("prev").parentElement.removeChild(prev);
   }
   head.style.transform = `translate(0rem,0rem)`;
   head.style.transitionDuration = "0s";
-
+  for (let i = 0; i < founded.length; i++) {
+    founded[i].remove();
+  }
   for (let i = 0; i < linkedListValues.length; i++) {
     const value = linkedListValues[i];
     let element = document.getElementById(value).parentElement.parentElement;

@@ -1,3 +1,4 @@
+import createWarning from "../../Warning/warning";
 function enqueue(queue, algorithmParameters) {
   if (queue.items.length < 13) {
     queue.items.push(algorithmParameters.queue.lastElement);
@@ -16,6 +17,8 @@ function enqueue(queue, algorithmParameters) {
     squareElement.style.animation = `appear 1s`;
     queueElement.appendChild(squareElement);
     algorithmParameters.queue.lastElement++;
+  } else {
+    createWarning("There is no more space");
   }
 }
 

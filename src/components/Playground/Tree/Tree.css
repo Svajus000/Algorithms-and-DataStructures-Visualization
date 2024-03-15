@@ -7,9 +7,10 @@
   height: 100%;
 }
 
-.target--tree {
+.target-tree {
   margin-top: 7rem;
-  margin-right: 10rem;
+  margin-right: 14rem;
+  height: 92px;
 }
 
 .nodeContainer {
@@ -32,19 +33,19 @@
   width: 6.125rem;
 }
 
-.layer2:first-child .pointer--tree--right--layer2 {
+.layer2:first-child .pointer-tree-right-layer2 {
   transform: rotate(-15deg);
 }
 
-.layer2:first-child .pointer--tree--left--layer2 .line--vertical--tree {
+.layer2:first-child .pointer-tree-left-layer2 .line-vertical-tree {
   height: 4.75rem;
 }
 
-.layer2:last-child .pointer--tree--left--layer2 {
+.layer2:last-child .pointer-tree-left-layer2 {
   transform: rotate(15deg);
 }
 
-.layer2:last-child .pointer--tree--right--layer2 .line--vertical--tree {
+.layer2:last-child .pointer-tree-right-layer2 .line-vertical-tree {
   height: 4.75rem;
 }
 
@@ -52,7 +53,7 @@
   opacity: 0;
 }
 
-.node--tree {
+.node-tree {
   display: flex;
   width: 3.5rem;
   height: 3.5rem;
@@ -64,7 +65,7 @@
   align-items: center;
 }
 
-.pointer--tree--left--layer1 {
+.pointer-tree-left-layer1 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -75,7 +76,7 @@
   transform: rotate(45deg);
 }
 
-.pointer--tree--right--layer1 {
+.pointer-tree-right-layer1 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -86,7 +87,7 @@
   transform: rotate(-45deg);
 }
 
-.pointer--tree--left--layer2 {
+.pointer-tree-left-layer2 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -97,7 +98,7 @@
   transform: rotate(30deg);
 }
 
-.pointer--tree--left--layer2 {
+.pointer-tree-left-layer2 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -108,7 +109,7 @@
   transform: rotate(30deg);
 }
 
-.pointer--tree--right--layer2 {
+.pointer-tree-right-layer2 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -119,7 +120,7 @@
   transform: rotate(-30deg);
 }
 
-.pointer--tree--left--layer3 {
+.pointer-tree-left-layer3 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -130,7 +131,7 @@
   transform: rotate(20deg);
 }
 
-.pointer--tree--right--layer3 {
+.pointer-tree-right-layer3 {
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -141,13 +142,13 @@
   transform: rotate(-20deg);
 }
 
-.line--vertical--tree {
+.line-vertical-tree {
   width: 0.5rem;
   height: 4rem;
   background-color: black;
 }
 
-.arrowHead--bottom--tree {
+.arrowHead-bottom-tree {
   border-right: 1rem solid transparent;
   border-top: 1rem solid rebeccapurple;
   border-left: 1rem solid transparent;
@@ -159,4 +160,9 @@
   justify-content: center;
   width: 100%;
   margin-top: 1.8rem;
+}
+
+.target-tree-node {
+  width: 4rem;
+  margin: 0rem;
 }

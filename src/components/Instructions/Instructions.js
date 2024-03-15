@@ -38,7 +38,7 @@ function Instructions() {
         </div>
         <div className="introduction">
           <p className="text">
-            Follow the instruction to understand how to use Data Structures and
+            Follow the instructions to understand how to use Data Structures and
             algorithms visualizer. Order matters.
           </p>
         </div>
