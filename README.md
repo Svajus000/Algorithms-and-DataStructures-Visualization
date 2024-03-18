@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+# Data Structures and Algorithms Visualization
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Note: These explanations are brief and basic.
 
-## Available Scripts
+### Queue
 
-In the project directory, you can run:
+# What is Queue?
 
-### `npm start`
+Queue Data Structure is a fundamental concept in computer science used for storing and managing data in a specific order. It follows the principle of “First in, First out” (FIFO), where the first element added to the queue is the first one to be removed.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# How does it work here?
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Queue has two algorithms enqueue and dequeue. Enqueue is an operation that adds object or any kind of data to the back of the queue. Dequeue is an opossite of that it takes out data from the front and returns it.
 
-### `npm test`
+### Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# What is Stack?
 
-### `npm run build`
+Stack is a linear data structure that follows a particular order in which the operations are performed. The order may be LIFO(Last In First Out) or FILO(First In Last Out). LIFO implies that the element that is inserted last, comes out first and FILO implies that the element that is inserted first, comes out last.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# How does it work here?
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Stack has two algorithms pop and push. Push: The push operation inserts data onto the top of the stack. This means that new elements are added to the top of the stack. Pop: The pop operation removes and returns the topmost element of the stack. After a pop operation, the stack is reduced in size, and the element removed is no longer accessible.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Hash Table
 
-### `npm run eject`
+# What is Hash Table?
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+A Hash table is a data structure used to insert, look up, and remove key-value pairs quickly. It operates on the hashing concept, where each key is translated by a hash function into a distinct index in an array. The index functions as a storage location for the matching value. In simple words, it maps the keys with the value.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# How does it work here?
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Here Hash table has setItem and getItem algorithms with fixed amount of key-value pairs you can insert and get. setItem algorithm takes an key-value pair from list inserts key in hashFunction and returns calculated hash. Hash is required to know where to store the key value pair. If there is no collision (i.e., another key mapping to the same address), the key-value pair is inserted directly into the calculated address. If a collision occurs, the hash table must resolve it using a collision resolution strategy (e.g., chaining or open addressing). In this case I use separate chaining. getItem takes an key input to hashFunction converts key into adress, searches and returns that keys value.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Linked List
 
-## Learn More
+# What is Linked List?
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A linked list is a fundamental data structure in computer science. It consists of nodes where each node contains data and a reference (link) to the next node in the sequence. This allows for dynamic memory allocation and efficient insertion and deletion operations compared to arrays.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# How does it work here?
 
-### Code Splitting
+Linked list here has three algorithms FindTarget, InsertTarget and DeleteTarget. FindTarget takes an input Target and traverses the linked list searching for that target and when it finds it, returns it. InsertTarget takes an input Target and TargetIndex, Target is the value of node that will be inserted and TargetIndex is the index where it will be inserted. DeleteTarget needs an TargetIndex to know which node to delete, then it traverses through the list and when it gets to that index algorithms connects previous node to next node and disconnect the current one.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Tree
 
-### Analyzing the Bundle Size
+# What is Tree?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+A tree data structure is a hierarchical structure that is used to represent and organize data in a way that is easy to navigate and search. It is a collection of nodes that are connected by edges and has a hierarchical relationship between the nodes.
 
-### Making a Progressive Web App
+# How does it work here?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This tree has two algorithms InsertTarget and DeleteTarget. As Linked List InsertTarget takes an input Target and finds the place where it should belong. DeleteTarget searches for given Target and when it finds, deletes.
 
-### Advanced Configuration
+### Graph
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# What is Graph?
 
-### Deployment
+A Graph Data Structure is a collection of nodes connected by edges. It’s used to represent relationships between different entities.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+# How does it work here?
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Graphs algorithms are a bit different than others, its Depth-First-Search (DFS) and Breath-First-Search (BFS). DFS is an algorithm that uses recursion to explore neighbour nodes and when all neighbour nodes are visited, backtracks. BFS has the same purpose but different approach, it uses loops to find adjacent nodes.
