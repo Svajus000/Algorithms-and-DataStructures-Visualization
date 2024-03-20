@@ -1,12 +1,14 @@
-.dropdown-algorithm {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 1.8s ease-out;
-  position: relative;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
+@media (min-width: 1024px) and (min-height: 900px) {
+  .dropdown-algorithm {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1.8s ease-out;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 
-.dropdown-algorithm.open {
-  max-height: 1000px;
+  .dropdown-algorithm.open {
+    max-height: 1000px;
+  }
 }

@@ -13,3 +13,54 @@
   font-size: 3rem;
   color: #2d3f41;
 }
+
+@media (min-width: 1024px) {
+  .playground {
+    width: 60%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .heading-playground {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+    font-size: 3rem;
+    color: #2d3f41;
+  }
+}
+
+@media (min-width: 750px) and (max-width: 1024px) {
+  .heading-playground {
+    font-size: 2.25rem;
+  }
+  .note {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 540px) and (max-width: 750px) {
+  .playground {
+    width: 70%;
+  }
+  .heading-playground {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 1280px) {
+  .note {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .playground {
+    width: 70%;
+  }
+  .heading-playground {
+    font-size: 1.25rem;
+  }
+}

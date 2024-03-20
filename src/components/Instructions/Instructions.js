@@ -9,10 +9,10 @@ function Instructions() {
     note = (
       <div className="instruction">
         <p className="note">
-          Note: <br></br>FindTarget requires Target without TargetIndex.
+          Note: <br></br>FindTarget-requires Target without TargetIndex.
           <br></br>
-          InsertTarget requires both Target and TargetIndex <br></br>
-          DeleteTarget requires only TargetIndex
+          InsertTarget-requires both Target and TargetIndex <br></br>
+          DeleteTarget-requires only TargetIndex
         </p>
       </div>
     );
