@@ -13,9 +13,23 @@ function dequeue(queue, algorithmParameters) {
         }, 1000);
       } else {
         setTimeout(() => {
-          squareElement.style.transform = `translateX(${
-            2.2 * algorithmParameters.queue.order
-          }rem)`;
+          if (window.innerWidth > 1024) {
+            squareElement.style.transform = `translateX(${
+              2.2 * algorithmParameters.queue.order
+            }rem)`;
+          } else if (window.innerWidth > 750 && window.innerWidth < 1024) {
+            squareElement.style.transform = `translateX(${
+              1.7 * algorithmParameters.queue.order
+            }rem)`;
+          } else if (window.innerWidth > 540 && window.innerWidth < 750) {
+            squareElement.style.transform = `translateX(${
+              1.4 * algorithmParameters.queue.order
+            }rem)`;
+          } else if (window.innerWidth < 540) {
+            squareElement.style.transform = `translateX(${
+              0.9 * algorithmParameters.queue.order
+            }rem)`;
+          }
         }, 750 * index);
       }
     });

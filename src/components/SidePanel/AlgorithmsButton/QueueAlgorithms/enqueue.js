@@ -8,12 +8,35 @@ function enqueue(queue, algorithmParameters) {
       "class",
       `square ${algorithmParameters.queue.lastElement}`
     );
-    squareElement.style.marginRight = `${
-      algorithmParameters.queue.lastElement * 2.2
-    }rem`;
-    squareElement.style.transform = `translateX(${
-      algorithmParameters.queue.order * 2.2
-    }rem)`;
+    if (window.innerWidth > 1024) {
+      squareElement.style.marginRight = `${
+        algorithmParameters.queue.lastElement * 2.2
+      }rem`;
+      squareElement.style.transform = `translateX(${
+        algorithmParameters.queue.order * 2.2
+      }rem)`;
+    } else if (window.innerWidth > 750 && window.innerWidth < 1024) {
+      squareElement.style.marginRight = `${
+        algorithmParameters.queue.lastElement * 1.7
+      }rem`;
+      squareElement.style.transform = `translateX(${
+        algorithmParameters.queue.order * 1.7
+      }rem)`;
+    } else if (window.innerWidth > 540 && window.innerWidth < 750) {
+      squareElement.style.marginRight = `${
+        algorithmParameters.queue.lastElement * 1.4
+      }rem`;
+      squareElement.style.transform = `translateX(${
+        algorithmParameters.queue.order * 1.4
+      }rem)`;
+    } else if (window.innerWidth < 540) {
+      squareElement.style.marginRight = `${
+        algorithmParameters.queue.lastElement * 0.9
+      }rem`;
+      squareElement.style.transform = `translateX(${
+        algorithmParameters.queue.order * 0.9
+      }rem)`;
+    }
     squareElement.style.animation = `appear 1s`;
     queueElement.appendChild(squareElement);
     algorithmParameters.queue.lastElement++;

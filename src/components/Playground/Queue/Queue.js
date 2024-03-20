@@ -37,8 +37,19 @@ function Queue(algorithmParameters) {
   let position = null;
   let movement = null;
   let squareList = line.map((item, index) => {
-    movement = algorithmParameters.algorithmParameters.queue.order * 2.2;
-    position = index * 2.2;
+    if (window.innerWidth > 1024) {
+      movement = algorithmParameters.algorithmParameters.queue.order * 2.2;
+      position = index * 2.2;
+    } else if (window.innerWidth > 750 && window.innerWidth < 1024) {
+      movement = algorithmParameters.algorithmParameters.queue.order * 1.7;
+      position = index * 1.7;
+    } else if (window.innerWidth > 540 && window.innerWidth < 750) {
+      movement = algorithmParameters.algorithmParameters.queue.order * 1.4;
+      position = index * 1.4;
+    } else if (window.innerWidth < 540) {
+      movement = algorithmParameters.algorithmParameters.queue.order * 0.9;
+      position = index * 0.9;
+    }
     return <Square id={item} position={position} movement={movement} />;
   });
 
